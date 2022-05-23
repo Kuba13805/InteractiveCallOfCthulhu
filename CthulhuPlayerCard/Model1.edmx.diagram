@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2d32e1d5de40424094b76b558f9f6383" Name="Diagram1">
+        <EntityTypeShape EntityType="Projekt_CthulhuModel.Imiona" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt_CthulhuModel.Nazwiska" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt_CthulhuModel.Rzeczy_osobiste" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt_CthulhuModel.Spis_postaci" Width="1.5" PointX="5.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt_CthulhuModel.Typy_przedmiotów" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Projekt_CthulhuModel.Zawody" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="Projekt_CthulhuModel.relacja2" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt_CthulhuModel.relacja3" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt_CthulhuModel.relacja4" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt_CthulhuModel.relacja5" ManuallyRouted="false" />
+        <AssociationConnector Association="Projekt_CthulhuModel.relacja1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

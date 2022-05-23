@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Projekt_CthulhuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Imiona">
+          <Key>
+            <PropertyRef Name="Id_imienia" />
+          </Key>
+          <Property Name="Id_imienia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Pochodzenie_imienia" Type="nchar" MaxLength="30" />
+          <Property Name="Plec_imienia" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Nazwiska">
+          <Key>
+            <PropertyRef Name="Id_nazwiska" />
+          </Key>
+          <Property Name="Id_nazwiska" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwisko" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Pochodzenie_nazwiska" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Rzeczy_osobiste">
+          <Key>
+            <PropertyRef Name="Id_przedmiotu" />
+          </Key>
+          <Property Name="Id_przedmiotu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_typu" Type="smallint" Nullable="false" />
+          <Property Name="Nazwa_przedmiotu" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Spis_postaci">
+          <Key>
+            <PropertyRef Name="Id_postaci" />
+          </Key>
+          <Property Name="Id_postaci" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_imienia" Type="int" Nullable="false" />
+          <Property Name="Id_nazwiska" Type="int" Nullable="false" />
+          <Property Name="Wiek" Type="smallint" Nullable="false" />
+          <Property Name="Id_zawodu" Type="int" Nullable="false" />
+          <Property Name="Plec" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="Miejsce_zamieszkania" Type="nchar" MaxLength="30" />
+          <Property Name="Pochodzenie" Type="nchar" MaxLength="30" />
+          <Property Name="Sila" Type="smallint" />
+          <Property Name="Zrecznosc" Type="smallint" />
+          <Property Name="Kondycja" Type="smallint" />
+          <Property Name="Wyglad" Type="smallint" />
+          <Property Name="Wyksztalcenie" Type="smallint" />
+          <Property Name="Budowa_ciala" Type="smallint" />
+          <Property Name="Inteligencja" Type="smallint" />
+          <Property Name="Szczescie" Type="tinyint" />
+          <Property Name="Moc" Type="smallint" />
+          <Property Name="Id_przedmiotu" Type="int" />
+          <Property Name="Historia" Type="tinyint" />
+          <Property Name="Bijatyka" Type="tinyint" />
+          <Property Name="Spostrzegawczosc" Type="tinyint" />
+          <Property Name="Pierwsza_Pomoc" Type="tinyint" />
+          <Property Name="Bron_Palna" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Typy_przedmiotów">
+          <Key>
+            <PropertyRef Name="Id_typu" />
+          </Key>
+          <Property Name="Id_typu" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa_typu" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zawody">
+          <Key>
+            <PropertyRef Name="Id_zawodu" />
+          </Key>
+          <Property Name="Id_zawodu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa_zawodu" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="Zwiazana_Historia" Type="nchar" MaxLength="1" />
+          <Property Name="Zwiazana_Bijatyka" Type="nchar" MaxLength="1" />
+          <Property Name="Zwiazana_Spostrzegawczosc" Type="nchar" MaxLength="1" />
+          <Property Name="Zwiazana_Pierwsza_Pomoc" Type="nchar" MaxLength="1" />
+          <Property Name="Zwiazana_Bron_Palna" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <Association Name="relacja1">
+          <End Role="Zawody" Type="Self.Zawody" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Spis_postaci" Type="Self.Spis_postaci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zawody">
+              <PropertyRef Name="Id_zawodu" />
+            </Principal>
+            <Dependent Role="Spis_postaci">
+              <PropertyRef Name="Id_zawodu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relacja2">
+          <End Role="Imiona" Type="Self.Imiona" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Spis_postaci" Type="Self.Spis_postaci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imiona">
+              <PropertyRef Name="Id_imienia" />
+            </Principal>
+            <Dependent Role="Spis_postaci">
+              <PropertyRef Name="Id_imienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relacja3">
+          <End Role="Nazwiska" Type="Self.Nazwiska" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Spis_postaci" Type="Self.Spis_postaci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nazwiska">
+              <PropertyRef Name="Id_nazwiska" />
+            </Principal>
+            <Dependent Role="Spis_postaci">
+              <PropertyRef Name="Id_nazwiska" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relacja4">
+          <End Role="Rzeczy_osobiste" Type="Self.Rzeczy_osobiste" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Spis_postaci" Type="Self.Spis_postaci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rzeczy_osobiste">
+              <PropertyRef Name="Id_przedmiotu" />
+            </Principal>
+            <Dependent Role="Spis_postaci">
+              <PropertyRef Name="Id_przedmiotu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relacja5">
+          <End Role="Typy_przedmiotów" Type="Self.Typy_przedmiotów" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Rzeczy_osobiste" Type="Self.Rzeczy_osobiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Typy_przedmiotów">
+              <PropertyRef Name="Id_typu" />
+            </Principal>
+            <Dependent Role="Rzeczy_osobiste">
+              <PropertyRef Name="Id_typu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Projekt_CthulhuModelStoreContainer">
+          <EntitySet Name="Imiona" EntityType="Self.Imiona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nazwiska" EntityType="Self.Nazwiska" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rzeczy_osobiste" EntityType="Self.Rzeczy_osobiste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Spis_postaci" EntityType="Self.Spis_postaci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Typy_przedmiotów" EntityType="Self.Typy_przedmiotów" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zawody" EntityType="Self.Zawody" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="relacja1" Association="Self.relacja1">
+            <End Role="Zawody" EntitySet="Zawody" />
+            <End Role="Spis_postaci" EntitySet="Spis_postaci" />
+          </AssociationSet>
+          <AssociationSet Name="relacja2" Association="Self.relacja2">
+            <End Role="Imiona" EntitySet="Imiona" />
+            <End Role="Spis_postaci" EntitySet="Spis_postaci" />
+          </AssociationSet>
+          <AssociationSet Name="relacja3" Association="Self.relacja3">
+            <End Role="Nazwiska" EntitySet="Nazwiska" />
+            <End Role="Spis_postaci" EntitySet="Spis_postaci" />
+          </AssociationSet>
+          <AssociationSet Name="relacja4" Association="Self.relacja4">
+            <End Role="Rzeczy_osobiste" EntitySet="Rzeczy_osobiste" />
+            <End Role="Spis_postaci" EntitySet="Spis_postaci" />
+          </AssociationSet>
+          <AssociationSet Name="relacja5" Association="Self.relacja5">
+            <End Role="Typy_przedmiotów" EntitySet="Typy_przedmiotów" />
+            <End Role="Rzeczy_osobiste" EntitySet="Rzeczy_osobiste" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Projekt_CthulhuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Imiona">
+          <Key>
+            <PropertyRef Name="Id_imienia" />
+          </Key>
+          <Property Name="Id_imienia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pochodzenie_imienia" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Plec_imienia" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Spis_postaci" Relationship="Self.relacja2" FromRole="Imiona" ToRole="Spis_postaci" />
+        </EntityType>
+        <EntityType Name="Nazwiska">
+          <Key>
+            <PropertyRef Name="Id_nazwiska" />
+          </Key>
+          <Property Name="Id_nazwiska" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwisko" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Pochodzenie_nazwiska" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Spis_postaci" Relationship="Self.relacja3" FromRole="Nazwiska" ToRole="Spis_postaci" />
+        </EntityType>
+        <EntityType Name="Rzeczy_osobiste">
+          <Key>
+            <PropertyRef Name="Id_przedmiotu" />
+          </Key>
+          <Property Name="Id_przedmiotu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_typu" Type="Int16" Nullable="false" />
+          <Property Name="Nazwa_przedmiotu" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Spis_postaci" Relationship="Self.relacja4" FromRole="Rzeczy_osobiste" ToRole="Spis_postaci" />
+          <NavigationProperty Name="Typy_przedmiotów" Relationship="Self.relacja5" FromRole="Rzeczy_osobiste" ToRole="Typy_przedmiotów" />
+        </EntityType>
+        <EntityType Name="Spis_postaci">
+          <Key>
+            <PropertyRef Name="Id_postaci" />
+          </Key>
+          <Property Name="Id_postaci" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_imienia" Type="Int32" Nullable="false" />
+          <Property Name="Id_nazwiska" Type="Int32" Nullable="false" />
+          <Property Name="Wiek" Type="Int16" Nullable="false" />
+          <Property Name="Id_zawodu" Type="Int32" Nullable="false" />
+          <Property Name="Plec" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Miejsce_zamieszkania" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Pochodzenie" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Sila" Type="Int16" />
+          <Property Name="Zrecznosc" Type="Int16" />
+          <Property Name="Kondycja" Type="Int16" />
+          <Property Name="Wyglad" Type="Int16" />
+          <Property Name="Wyksztalcenie" Type="Int16" />
+          <Property Name="Budowa_ciala" Type="Int16" />
+          <Property Name="Inteligencja" Type="Int16" />
+          <Property Name="Szczescie" Type="Byte" />
+          <Property Name="Moc" Type="Int16" />
+          <Property Name="Id_przedmiotu" Type="Int32" />
+          <Property Name="Historia" Type="Byte" />
+          <Property Name="Bijatyka" Type="Byte" />
+          <Property Name="Spostrzegawczosc" Type="Byte" />
+          <Property Name="Pierwsza_Pomoc" Type="Byte" />
+          <Property Name="Bron_Palna" Type="Byte" />
+          <NavigationProperty Name="Imiona" Relationship="Self.relacja2" FromRole="Spis_postaci" ToRole="Imiona" />
+          <NavigationProperty Name="Nazwiska" Relationship="Self.relacja3" FromRole="Spis_postaci" ToRole="Nazwiska" />
+          <NavigationProperty Name="Rzeczy_osobiste" Relationship="Self.relacja4" FromRole="Spis_postaci" ToRole="Rzeczy_osobiste" />
+          <NavigationProperty Name="Zawody" Relationship="Self.relacja1" FromRole="Spis_postaci" ToRole="Zawody" />
+        </EntityType>
+        <EntityType Name="Typy_przedmiotów">
+          <Key>
+            <PropertyRef Name="Id_typu" />
+          </Key>
+          <Property Name="Id_typu" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_typu" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Rzeczy_osobiste" Relationship="Self.relacja5" FromRole="Typy_przedmiotów" ToRole="Rzeczy_osobiste" />
+        </EntityType>
+        <EntityType Name="Zawody">
+          <Key>
+            <PropertyRef Name="Id_zawodu" />
+          </Key>
+          <Property Name="Id_zawodu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa_zawodu" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Zwiazana_Historia" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Zwiazana_Bijatyka" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Zwiazana_Spostrzegawczosc" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Zwiazana_Pierwsza_Pomoc" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="Zwiazana_Bron_Palna" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Spis_postaci" Relationship="Self.relacja1" FromRole="Zawody" ToRole="Spis_postaci" />
+        </EntityType>
+        <Association Name="relacja2">
+          <End Role="Imiona" Type="Self.Imiona" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Spis_postaci" Type="Self.Spis_postaci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Imiona">
+              <PropertyRef Name="Id_imienia" />
+            </Principal>
+            <Dependent Role="Spis_postaci">
+              <PropertyRef Name="Id_imienia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relacja3">
+          <End Role="Nazwiska" Type="Self.Nazwiska" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Spis_postaci" Type="Self.Spis_postaci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nazwiska">
+              <PropertyRef Name="Id_nazwiska" />
+            </Principal>
+            <Dependent Role="Spis_postaci">
+              <PropertyRef Name="Id_nazwiska" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relacja4">
+          <End Role="Rzeczy_osobiste" Type="Self.Rzeczy_osobiste" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Spis_postaci" Type="Self.Spis_postaci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rzeczy_osobiste">
+              <PropertyRef Name="Id_przedmiotu" />
+            </Principal>
+            <Dependent Role="Spis_postaci">
+              <PropertyRef Name="Id_przedmiotu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relacja5">
+          <End Role="Typy_przedmiotów" Type="Self.Typy_przedmiotów" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Rzeczy_osobiste" Type="Self.Rzeczy_osobiste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Typy_przedmiotów">
+              <PropertyRef Name="Id_typu" />
+            </Principal>
+            <Dependent Role="Rzeczy_osobiste">
+              <PropertyRef Name="Id_typu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relacja1">
+          <End Role="Zawody" Type="Self.Zawody" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Spis_postaci" Type="Self.Spis_postaci" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zawody">
+              <PropertyRef Name="Id_zawodu" />
+            </Principal>
+            <Dependent Role="Spis_postaci">
+              <PropertyRef Name="Id_zawodu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Projekt_CthulhuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Imiona" EntityType="Self.Imiona" />
+          <EntitySet Name="Nazwiska" EntityType="Self.Nazwiska" />
+          <EntitySet Name="Rzeczy_osobiste" EntityType="Self.Rzeczy_osobiste" />
+          <EntitySet Name="Spis_postaci" EntityType="Self.Spis_postaci" />
+          <EntitySet Name="Typy_przedmiotów" EntityType="Self.Typy_przedmiotów" />
+          <EntitySet Name="Zawody" EntityType="Self.Zawody" />
+          <AssociationSet Name="relacja2" Association="Self.relacja2">
+            <End Role="Imiona" EntitySet="Imiona" />
+            <End Role="Spis_postaci" EntitySet="Spis_postaci" />
+          </AssociationSet>
+          <AssociationSet Name="relacja3" Association="Self.relacja3">
+            <End Role="Nazwiska" EntitySet="Nazwiska" />
+            <End Role="Spis_postaci" EntitySet="Spis_postaci" />
+          </AssociationSet>
+          <AssociationSet Name="relacja4" Association="Self.relacja4">
+            <End Role="Rzeczy_osobiste" EntitySet="Rzeczy_osobiste" />
+            <End Role="Spis_postaci" EntitySet="Spis_postaci" />
+          </AssociationSet>
+          <AssociationSet Name="relacja5" Association="Self.relacja5">
+            <End Role="Typy_przedmiotów" EntitySet="Typy_przedmiotów" />
+            <End Role="Rzeczy_osobiste" EntitySet="Rzeczy_osobiste" />
+          </AssociationSet>
+          <AssociationSet Name="relacja1" Association="Self.relacja1">
+            <End Role="Zawody" EntitySet="Zawody" />
+            <End Role="Spis_postaci" EntitySet="Spis_postaci" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Projekt_CthulhuModelStoreContainer" CdmEntityContainer="Projekt_CthulhuEntities">
+          <EntitySetMapping Name="Imiona">
+            <EntityTypeMapping TypeName="Projekt_CthulhuModel.Imiona">
+              <MappingFragment StoreEntitySet="Imiona">
+                <ScalarProperty Name="Id_imienia" ColumnName="Id_imienia" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Pochodzenie_imienia" ColumnName="Pochodzenie_imienia" />
+                <ScalarProperty Name="Plec_imienia" ColumnName="Plec_imienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nazwiska">
+            <EntityTypeMapping TypeName="Projekt_CthulhuModel.Nazwiska">
+              <MappingFragment StoreEntitySet="Nazwiska">
+                <ScalarProperty Name="Id_nazwiska" ColumnName="Id_nazwiska" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Pochodzenie_nazwiska" ColumnName="Pochodzenie_nazwiska" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rzeczy_osobiste">
+            <EntityTypeMapping TypeName="Projekt_CthulhuModel.Rzeczy_osobiste">
+              <MappingFragment StoreEntitySet="Rzeczy_osobiste">
+                <ScalarProperty Name="Id_przedmiotu" ColumnName="Id_przedmiotu" />
+                <ScalarProperty Name="Id_typu" ColumnName="Id_typu" />
+                <ScalarProperty Name="Nazwa_przedmiotu" ColumnName="Nazwa_przedmiotu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Spis_postaci">
+            <EntityTypeMapping TypeName="Projekt_CthulhuModel.Spis_postaci">
+              <MappingFragment StoreEntitySet="Spis_postaci">
+                <ScalarProperty Name="Id_postaci" ColumnName="Id_postaci" />
+                <ScalarProperty Name="Id_imienia" ColumnName="Id_imienia" />
+                <ScalarProperty Name="Id_nazwiska" ColumnName="Id_nazwiska" />
+                <ScalarProperty Name="Wiek" ColumnName="Wiek" />
+                <ScalarProperty Name="Id_zawodu" ColumnName="Id_zawodu" />
+                <ScalarProperty Name="Plec" ColumnName="Plec" />
+                <ScalarProperty Name="Miejsce_zamieszkania" ColumnName="Miejsce_zamieszkania" />
+                <ScalarProperty Name="Pochodzenie" ColumnName="Pochodzenie" />
+                <ScalarProperty Name="Sila" ColumnName="Sila" />
+                <ScalarProperty Name="Zrecznosc" ColumnName="Zrecznosc" />
+                <ScalarProperty Name="Kondycja" ColumnName="Kondycja" />
+                <ScalarProperty Name="Wyglad" ColumnName="Wyglad" />
+                <ScalarProperty Name="Wyksztalcenie" ColumnName="Wyksztalcenie" />
+                <ScalarProperty Name="Budowa_ciala" ColumnName="Budowa_ciala" />
+                <ScalarProperty Name="Inteligencja" ColumnName="Inteligencja" />
+                <ScalarProperty Name="Szczescie" ColumnName="Szczescie" />
+                <ScalarProperty Name="Moc" ColumnName="Moc" />
+                <ScalarProperty Name="Id_przedmiotu" ColumnName="Id_przedmiotu" />
+                <ScalarProperty Name="Historia" ColumnName="Historia" />
+                <ScalarProperty Name="Bijatyka" ColumnName="Bijatyka" />
+                <ScalarProperty Name="Spostrzegawczosc" ColumnName="Spostrzegawczosc" />
+                <ScalarProperty Name="Pierwsza_Pomoc" ColumnName="Pierwsza_Pomoc" />
+                <ScalarProperty Name="Bron_Palna" ColumnName="Bron_Palna" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Typy_przedmiotów">
+            <EntityTypeMapping TypeName="Projekt_CthulhuModel.Typy_przedmiotów">
+              <MappingFragment StoreEntitySet="Typy_przedmiotów">
+                <ScalarProperty Name="Id_typu" ColumnName="Id_typu" />
+                <ScalarProperty Name="Nazwa_typu" ColumnName="Nazwa_typu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zawody">
+            <EntityTypeMapping TypeName="Projekt_CthulhuModel.Zawody">
+              <MappingFragment StoreEntitySet="Zawody">
+                <ScalarProperty Name="Id_zawodu" ColumnName="Id_zawodu" />
+                <ScalarProperty Name="Nazwa_zawodu" ColumnName="Nazwa_zawodu" />
+                <ScalarProperty Name="Zwiazana_Historia" ColumnName="Zwiazana_Historia" />
+                <ScalarProperty Name="Zwiazana_Bijatyka" ColumnName="Zwiazana_Bijatyka" />
+                <ScalarProperty Name="Zwiazana_Spostrzegawczosc" ColumnName="Zwiazana_Spostrzegawczosc" />
+                <ScalarProperty Name="Zwiazana_Pierwsza_Pomoc" ColumnName="Zwiazana_Pierwsza_Pomoc" />
+                <ScalarProperty Name="Zwiazana_Bron_Palna" ColumnName="Zwiazana_Bron_Palna" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
