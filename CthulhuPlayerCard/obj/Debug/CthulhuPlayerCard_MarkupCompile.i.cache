@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\
+D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\
 CthulhuPlayerCard
 none
 false
 DEBUG;TRACE
-D:\InteractiveCallOfCthulhu\CthulhuPlayerCard\App.xaml
-2-1840206046
+D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\App.xaml
+3843657899
 21750853300
-17243109476
-18-1643109905
-LoadCharacterWindow.xaml;MainWindow.xaml;
+18-839480227
+18-122512274
+ChoseCharacterPage.xaml;LoadCharacterWindow.xaml;MainWindow.xaml;
 
-True
+False
 

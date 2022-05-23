@@ -29,5 +29,12 @@ namespace CthulhuPlayerCard
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void LoadCharacterButtonClick(object sender, RoutedEventArgs e)
+        {
+            LoadCharacterWindow CharacterWindow = new LoadCharacterWindow();
+            CharacterWindow.Show();
+            Close();
+        }
     }
 }
