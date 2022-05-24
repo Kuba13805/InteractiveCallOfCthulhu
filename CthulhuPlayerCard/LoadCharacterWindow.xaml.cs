@@ -19,6 +19,7 @@ namespace CthulhuPlayerCard
     /// </summary>
     public partial class LoadCharacterWindow : Window
     {
+        int LoadedCharacterID;
         public LoadCharacterWindow()
         {
             InitializeComponent();
@@ -39,15 +40,33 @@ namespace CthulhuPlayerCard
         {
 
         }
-
+        private void GettingCharacterId(string TextboxString)
+        {
+            bool success = int.TryParse(TextboxString, out LoadedCharacterID);
+            if (!success)
+            {
+                string caption = "Wrong ID!";
+                string message = "Ensure that ID is an integer!";
+                MessageBoxResult result = MessageBox.Show(message, caption);
+                CharacterIdInput.Clear();
+            }
+        }
+     
         private void LoadCharacterButton_Click(object sender, RoutedEventArgs e)
         {
-
+            GettingCharacterId(CharacterIdInput.Text);
         }
 
         private void DeleteCharacterButton_Click(object sender, RoutedEventArgs e)
         {
+            GettingCharacterId(CharacterIdInput.Text);
+        }
 
+        private void MainMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow Window = new MainWindow();
+            Window.Show();
+            Close();
         }
     }
 }

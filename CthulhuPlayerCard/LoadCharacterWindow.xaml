@@ -11,7 +11,7 @@
         <CollectionViewSource x:Key="listaPostaciViewSource" Source="{Binding ListaPostaci, Source={StaticResource projekt_CthulhuDataSet}}"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource listaPostaciViewSource}" Margin="0,0,2,-21">
-        <DataGrid x:Name="listaPostaciDataGrid" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" IsReadOnly="True" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="469,10,10,40" RowDetailsVisibilityMode="VisibleWhenSelected" Background="White" BorderBrush="Black" RowHeight="25" Height="380" RowHeaderWidth="30" ColumnHeaderHeight="30" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionChanged="listaPostaciDataGrid_SelectionChanged" ColumnWidth="Auto" CanUserResizeColumns="False" MinColumnWidth="40" Width="300" GridLinesVisibility="Horizontal">
+        <DataGrid x:Name="listaPostaciDataGrid" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" IsReadOnly="True" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="470,10,10,40" RowDetailsVisibilityMode="VisibleWhenSelected" Background="White" BorderBrush="Black" RowHeight="25" Height="380" RowHeaderWidth="30" ColumnHeaderHeight="30" CanUserResizeRows="False" AutoGenerateColumns="False" SelectionChanged="listaPostaciDataGrid_SelectionChanged" ColumnWidth="Auto" CanUserResizeColumns="False" MinColumnWidth="40" Width="300" GridLinesVisibility="Horizontal">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="id_postaciColumn" Binding="{Binding Id_postaci}" Header="Character Id" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="imieColumn" Binding="{Binding Imie}" Header="Name" Width="SizeToHeader"/>
@@ -19,9 +19,11 @@
                 <DataGridTextColumn x:Name="nazwa_zawoduColumn" Binding="{Binding Nazwa_zawodu}" Header="Profession" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="CharacterIdInput" HorizontalAlignment="Left" Height="25" Margin="229,234,0,0" VerticalAlignment="Top" Width="95" Foreground="Black" RenderTransformOrigin="0.48,0.56"/>
-        <Label Content="Enter Character Id:" HorizontalAlignment="Left" Height="25" Margin="114,234,0,0" VerticalAlignment="Top" Width="110"/>
-        <Button x:Name="LoadCharacterButton" Content="Load Character" HorizontalAlignment="Left" Height="50" Margin="27,345,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="LoadCharacterButton_Click"/>
-        <Button x:Name="DeleteCharacterButton" Content="Load Character" HorizontalAlignment="Left" Height="50" Margin="271,345,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="DeleteCharacterButton_Click"/>
+        <TextBox x:Name="CharacterIdInput" HorizontalAlignment="Left" Height="25" Margin="240,234,0,0" VerticalAlignment="Top" Width="95" Foreground="Black" RenderTransformOrigin="0.48,0.56"/>
+        <Label Content="Enter Character Id:" HorizontalAlignment="Left" Height="25" Margin="125,234,0,0" VerticalAlignment="Top" Width="110"/>
+        <Button x:Name="LoadCharacterButton" Content="Load Character" HorizontalAlignment="Left" Height="50" Margin="45,280,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="LoadCharacterButton_Click"/>
+        <Button x:Name="DeleteCharacterButton" Content="Delete Character" Margin="240,280,0,0" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="DeleteCharacterButton_Click" HorizontalAlignment="Left" Width="185" Height="50" VerticalAlignment="Top"/>
+        <Button x:Name="MainMenuButton" Content="Main Menu" HorizontalAlignment="Left" Height="50" Margin="45,345,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="MainMenuButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Height="90" Margin="35,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" FontSize="24" FontFamily="Rockwell"><Run Text="Choose which character will be loaded"/><Run Text=" or deleted"/><Run Text=" by entering its ID"/><Run Text=" "/><Run Text="in the empty space."/></TextBlock>
     </Grid>
 </Window>
