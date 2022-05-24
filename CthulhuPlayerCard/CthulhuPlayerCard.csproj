@@ -67,9 +67,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ChoseCharacterPage.xaml.cs">
-      <DependentUpon>ChoseCharacterPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Imiona.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -101,10 +98,6 @@
     <Compile Include="Zawody.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Page Include="ChoseCharacterPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="LoadCharacterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

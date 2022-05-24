@@ -44,6 +44,4 @@ D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\CthulhuPlayerCard.csproj.CopyComplete
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\CthulhuPlayerCard.exe
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\CthulhuPlayerCard.pdb
-D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\ChoseCharacterPage.g.cs
-D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\ChoseCharacterPage.baml
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\GeneratedInternalTypeHelper.g.cs
