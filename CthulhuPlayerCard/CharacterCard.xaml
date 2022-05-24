@@ -11,8 +11,30 @@
         <CollectionViewSource x:Key="listaPostaciViewSource" Source="{Binding ListaPostaci, Source={StaticResource projekt_CthulhuDataSet}}"/>
     </Window.Resources>
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Background="#FF2C374F">
-            <TextBox x:Name="CharacterIdDisplay" HorizontalAlignment="Left" Text="TextBox" Width="150" IsReadOnly="True" Background="{x:Null}" Foreground="White" FontSize="16" TextAlignment="Center" BorderBrush="{x:Null}" FontFamily="Rockwell" Height="22" VerticalAlignment="Top" IsUndoEnabled="True" RenderTransformOrigin="0.5,0.812" MaxLines="1"/>
+        <Grid HorizontalAlignment="Left" Height="180" Margin="20,20,0,0" VerticalAlignment="Top" Width="160" Background="#FF2C374F">
+            <TextBox x:Name="CharacterIdDisplay" HorizontalAlignment="Left" Text="TextBox" Width="150" IsReadOnly="True" Background="{x:Null}" Foreground="White" FontSize="16" TextAlignment="Center" BorderBrush="{x:Null}" FontFamily="Rockwell" Height="22" VerticalAlignment="Top" IsUndoEnabled="True" RenderTransformOrigin="0.5,0.812" MaxLines="1" Margin="5,150,5,0"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="180" Margin="220,20,0,0" VerticalAlignment="Top" Width="260">
+            <Label Content="Investigator's Data" HorizontalAlignment="Left" Height="26" Margin="65,0,0,0" VerticalAlignment="Top" Width="130" FontFamily="Rockwell" FontSize="14" Foreground="#FF2C374F"/>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="0,25,0,0" VerticalAlignment="Top" Width="260">
+                <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="40" FontFamily="Rockwell" Margin="0,5,0,0"/>
+                <TextBlock x:Name="NameFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="220" FontFamily="Rockwell" Margin="40,5,0,0"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="0,55,0,0" VerticalAlignment="Top" Width="260"/>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="0,85,0,0" VerticalAlignment="Top" Width="260">
+                <TextBlock x:Name="AgeLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" FontFamily="Rockwell" Margin="0,5,0,0" Text="Age:"/>
+                <TextBlock x:Name="AgeFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="60" FontFamily="Rockwell" Margin="30,5,0,0"/>
+                <TextBlock x:Name="SexLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" FontFamily="Rockwell" Margin="150,5,0,0" Text="Sex:"/>
+                <TextBlock x:Name="SexFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="85" FontFamily="Rockwell" Margin="175,5,0,0"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="0,115,0,0" VerticalAlignment="Top" Width="260">
+                <TextBlock x:Name="PlaceOfResidenceLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontFamily="Rockwell" Margin="0,5,0,0"><Run Text="P"/><Run Text="lace of residence:"/></TextBlock>
+                <TextBlock x:Name="PlaceOfResidenceFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="154" FontFamily="Rockwell" Margin="106,5,0,0"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="0,145,0,0" VerticalAlignment="Top" Width="260">
+                <TextBlock x:Name="CountryOfBirthLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontFamily="Rockwell" Margin="0,5,0,0" Text="Country of birth:"/>
+                <TextBlock x:Name="CountryOfBirthFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="154" FontFamily="Rockwell" Margin="106,5,0,0"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
