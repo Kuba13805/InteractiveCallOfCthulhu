@@ -18,7 +18,8 @@
             <Label Content="Investigator's Data" HorizontalAlignment="Left" Height="26" Margin="65,0,0,0" VerticalAlignment="Top" Width="130" FontFamily="Rockwell" FontSize="14" Foreground="#FF2C374F"/>
             <Grid HorizontalAlignment="Left" Height="25" Margin="0,25,0,0" VerticalAlignment="Top" Width="260">
                 <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="40" FontFamily="Rockwell" Margin="0,5,0,0"/>
-                <TextBox x:Name="NameFromData" HorizontalAlignment="Left" Height="20" Margin="40,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True"/>
+                <TextBox x:Name="NameFromData" HorizontalAlignment="Left" Height="20" Margin="40,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="110" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True" TextAlignment="Center"/>
+                <TextBox x:Name="SurnameFromData" HorizontalAlignment="Left" Height="20" Margin="150,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="110" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True" TextAlignment="Center"/>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="25" Margin="0,55,0,0" VerticalAlignment="Top" Width="260">
                 <TextBlock x:Name="ProfessionLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Profession:" VerticalAlignment="Top" Width="61" FontFamily="Rockwell" Margin="0,5,0,0"/>
@@ -74,9 +75,8 @@
                         <RowDefinition Height="19*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel1" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" Grid.RowSpan="2" FontSize="25" Height="30" VerticalAlignment="Top" TextAlignment="Center"><Run Text="S"/><Run Text="TR"/></TextBlock>
-                    <TextBox x:Name="SFromData1" Margin="75,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Grid.RowSpan="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Top" IsReadOnly="True"/>
-                    <TextBox Height="20" Margin="120,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="18" Margin="120,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" Grid.RowSpan="2" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="SFromData" Margin="75,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Grid.RowSpan="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Top" IsReadOnly="True"/>
+                    <Button x:Name="RollStrength" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="0,55,0,0">
                     <Grid.RowDefinitions>
@@ -84,9 +84,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel2" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="CON" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData2" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="ConFromData" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollConstitution" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollConstitutionButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="0,110,0,0">
                     <Grid.RowDefinitions>
@@ -94,9 +93,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel3" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="DEX" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData3" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="SFromData3" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollDexterity" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollDexterityButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,0,0,0">
                     <Grid.RowDefinitions>
@@ -104,9 +102,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel4" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="SIZ" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData4" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="SFromData4" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollStrength_Copy2" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,55,0,0">
                     <Grid.RowDefinitions>
@@ -114,9 +111,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel5" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="POW" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData5" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="SFromData5" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollStrength_Copy3" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,110,0,0">
                     <Grid.RowDefinitions>
@@ -124,9 +120,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel6" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="APP" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData6" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="SFromData6" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollStrength_Copy4" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,0,0,0">
                     <Grid.RowDefinitions>
@@ -134,9 +129,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel7" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="EDU" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData7" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="SFromData7" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollStrength_Copy5" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,55,0,0">
                     <Grid.RowDefinitions>
@@ -144,9 +138,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel8" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="INT" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData8" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="SFromData8" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollStrength_Copy6" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,110,0,0">
                     <Grid.RowDefinitions>
@@ -154,9 +147,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel9" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="MOVE" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="19" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData9" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
-                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox x:Name="SFromData9" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollStrength_Copy7" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
             </Grid>
         </Grid>
