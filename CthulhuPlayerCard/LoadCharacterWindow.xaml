@@ -24,6 +24,8 @@
         <Button x:Name="LoadCharacterButton" Content="Load Character" HorizontalAlignment="Left" Height="50" Margin="45,280,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="LoadCharacterButton_Click"/>
         <Button x:Name="DeleteCharacterButton" Content="Delete Character" Margin="240,280,0,0" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="DeleteCharacterButton_Click" HorizontalAlignment="Left" Width="185" Height="50" VerticalAlignment="Top"/>
         <Button x:Name="MainMenuButton" Content="Main Menu" HorizontalAlignment="Left" Height="50" Margin="45,345,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="MainMenuButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Height="90" Margin="35,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" FontSize="24" FontFamily="Rockwell"><Run Text="Choose which character will be loaded"/><Run Text=" or deleted"/><Run Text=" by entering its ID"/><Run Text=" "/><Run Text="in the empty space."/></TextBlock>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="45,15,0,0" VerticalAlignment="Top" Width="380" Background="#FF2C374F">
+            <TextBlock HorizontalAlignment="Left" Height="80" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" FontSize="20" FontFamily="Rockwell" Foreground="White" Margin="10,10,0,0"><Run Text="Choose which character will be loaded"/><Run Text=" or deleted"/><Run Text=" by entering its ID"/><Run Text=" "/><Run Text="in the empty space."/></TextBlock>
+        </Grid>
     </Grid>
 </Window>

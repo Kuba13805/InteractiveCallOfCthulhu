@@ -1,0 +1,18 @@
+﻿<Window x:Class="CthulhuPlayerCard.CharacterCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CthulhuPlayerCard"
+        mc:Ignorable="d"
+        Title="CharacterCard" Height="450" Width="800" Background="#FFD6DBDE" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
+        <CollectionViewSource x:Key="listaPostaciViewSource" Source="{Binding ListaPostaci, Source={StaticResource projekt_CthulhuDataSet}}"/>
+    </Window.Resources>
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Background="#FF2C374F">
+            <TextBox x:Name="CharacterIdDisplay" HorizontalAlignment="Left" Text="TextBox" Width="150" IsReadOnly="True" Background="{x:Null}" Foreground="White" FontSize="16" TextAlignment="Center" BorderBrush="{x:Null}" FontFamily="Rockwell" Height="22" VerticalAlignment="Top" IsUndoEnabled="True" RenderTransformOrigin="0.5,0.812" MaxLines="1"/>
+        </Grid>
+    </Grid>
+</Window>
