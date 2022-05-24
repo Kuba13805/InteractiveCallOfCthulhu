@@ -30,5 +30,10 @@ namespace CthulhuPlayerCard
             ChoosenID = LoadCharacterWindow._LoadedCharacterID.ToString();
             CharacterIdDisplay.Text = "Character ID: " + ChoosenID;
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

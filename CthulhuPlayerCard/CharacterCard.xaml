@@ -5,35 +5,159 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuPlayerCard"
         mc:Ignorable="d"
-        Title="CharacterCard" Height="450" Width="800" Background="#FFD6DBDE" Loaded="Window_Loaded">
+        Title="CharacterCard" Height="659" Width="1171.556" Background="#FFD6DBDE" Loaded="Window_Loaded">
     <Window.Resources>
         <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
         <CollectionViewSource x:Key="listaPostaciViewSource" Source="{Binding ListaPostaci, Source={StaticResource projekt_CthulhuDataSet}}"/>
     </Window.Resources>
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="180" Margin="20,20,0,0" VerticalAlignment="Top" Width="160" Background="#FF2C374F">
+        <Grid x:Name="Photo" HorizontalAlignment="Left" Height="180" Margin="20,20,0,0" VerticalAlignment="Top" Width="160" Background="#FF2C374F" d:IsLocked="True">
             <TextBox x:Name="CharacterIdDisplay" HorizontalAlignment="Left" Text="TextBox" Width="150" IsReadOnly="True" Background="{x:Null}" Foreground="White" FontSize="16" TextAlignment="Center" BorderBrush="{x:Null}" FontFamily="Rockwell" Height="22" VerticalAlignment="Top" IsUndoEnabled="True" RenderTransformOrigin="0.5,0.812" MaxLines="1" Margin="5,150,5,0"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="180" Margin="220,20,0,0" VerticalAlignment="Top" Width="260">
+        <Grid x:Name="InvestigatorsData" HorizontalAlignment="Left" Height="180" Margin="200,20,0,0" VerticalAlignment="Top" Width="260" d:IsLocked="True">
             <Label Content="Investigator's Data" HorizontalAlignment="Left" Height="26" Margin="65,0,0,0" VerticalAlignment="Top" Width="130" FontFamily="Rockwell" FontSize="14" Foreground="#FF2C374F"/>
             <Grid HorizontalAlignment="Left" Height="25" Margin="0,25,0,0" VerticalAlignment="Top" Width="260">
                 <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="40" FontFamily="Rockwell" Margin="0,5,0,0"/>
-                <TextBlock x:Name="NameFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="220" FontFamily="Rockwell" Margin="40,5,0,0"/>
+                <TextBox x:Name="NameFromData" HorizontalAlignment="Left" Height="20" Margin="40,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="220" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" Height="25" Margin="0,55,0,0" VerticalAlignment="Top" Width="260"/>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="0,55,0,0" VerticalAlignment="Top" Width="260">
+                <TextBlock x:Name="ProfessionLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Profession:" VerticalAlignment="Top" Width="61" FontFamily="Rockwell" Margin="0,5,0,0"/>
+                <TextBox x:Name="ProfessionFromData" HorizontalAlignment="Left" Height="20" Margin="61,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="199" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True"/>
+            </Grid>
             <Grid HorizontalAlignment="Left" Height="25" Margin="0,85,0,0" VerticalAlignment="Top" Width="260">
                 <TextBlock x:Name="AgeLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" FontFamily="Rockwell" Margin="0,5,0,0" Text="Age:"/>
-                <TextBlock x:Name="AgeFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="60" FontFamily="Rockwell" Margin="30,5,0,0"/>
                 <TextBlock x:Name="SexLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" FontFamily="Rockwell" Margin="150,5,0,0" Text="Sex:"/>
-                <TextBlock x:Name="SexFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="85" FontFamily="Rockwell" Margin="175,5,0,0"/>
+                <TextBox x:Name="AgeFromData" HorizontalAlignment="Left" Height="20" Margin="30,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="115" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True"/>
+                <TextBox x:Name="SexFromData" HorizontalAlignment="Left" Height="20" Margin="175,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="85" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True"/>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="25" Margin="0,115,0,0" VerticalAlignment="Top" Width="260">
                 <TextBlock x:Name="PlaceOfResidenceLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontFamily="Rockwell" Margin="0,5,0,0"><Run Text="P"/><Run Text="lace of residence:"/></TextBlock>
-                <TextBlock x:Name="PlaceOfResidenceFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="154" FontFamily="Rockwell" Margin="106,5,0,0"/>
+                <TextBox x:Name="PlaceOfResidenceFromData" HorizontalAlignment="Left" Height="20" Margin="106,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="154" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True"/>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="25" Margin="0,145,0,0" VerticalAlignment="Top" Width="260">
-                <TextBlock x:Name="CountryOfBirthLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" FontFamily="Rockwell" Margin="0,5,0,0" Text="Country of birth:"/>
-                <TextBlock x:Name="CountryOfBirthFromData" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="154" FontFamily="Rockwell" Margin="106,5,0,0"/>
+                <TextBlock x:Name="CountryOfBirthLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" FontFamily="Rockwell" Margin="0,5,0,0" Text="Country of birth:"/>
+                <TextBox x:Name="CountryOfBirthFromData" HorizontalAlignment="Left" Height="20" Margin="93,5,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="167" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" IsReadOnly="True"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="1,0,0,0" VerticalAlignment="Top" Width="64">
+                <Grid HorizontalAlignment="Left" Height="2" Margin="0,12,0,0" VerticalAlignment="Top" Width="64" Background="#FF2C374F"/>
+                <Grid HorizontalAlignment="Left" Height="1" Margin="0,15,0,0" VerticalAlignment="Top" Width="64" Background="#FF2C374F"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="196,0,0,0" VerticalAlignment="Top" Width="64">
+                <Grid HorizontalAlignment="Left" Height="2" Margin="0,12,0,0" VerticalAlignment="Top" Width="64" Background="#FF2C374F"/>
+                <Grid HorizontalAlignment="Left" Height="1" Margin="0,15,0,0" VerticalAlignment="Top" Width="64" Background="#FF2C374F"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="Attributes" HorizontalAlignment="Left" Height="200" Margin="500,20,0,0" VerticalAlignment="Top" Width="445">
+            <Label Content="Attributes" Height="25" Margin="185,0" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="14" Foreground="#FF2C374F"/>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="1,0,0,0" VerticalAlignment="Top" Width="184">
+                <Grid HorizontalAlignment="Left" Height="2" Margin="0,12,0,0" VerticalAlignment="Top" Width="184" Background="#FF2C374F"/>
+                <Grid HorizontalAlignment="Left" Height="1" Margin="0,15,0,0" VerticalAlignment="Top" Width="184" Background="#FF2C374F">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="103*"/>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="25" Margin="260,0,0,0" VerticalAlignment="Top" Width="185">
+                <Grid HorizontalAlignment="Left" Height="2" Margin="0,12,0,0" VerticalAlignment="Top" Width="185" Background="#FF2C374F"/>
+                <Grid HorizontalAlignment="Left" Height="1" Margin="0,15,0,0" VerticalAlignment="Top" Width="185" Background="#FF2C374F"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="160" Margin="0,30,-150,0" VerticalAlignment="Top" Width="445">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0*"/>
+                </Grid.ColumnDefinitions>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="31*"/>
+                        <RowDefinition Height="19*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel1" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" Grid.RowSpan="2" FontSize="25" Height="30" VerticalAlignment="Top" TextAlignment="Center"><Run Text="S"/><Run Text="TR"/></TextBlock>
+                    <TextBox x:Name="SFromData1" Margin="75,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Grid.RowSpan="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Top" IsReadOnly="True"/>
+                    <TextBox Height="20" Margin="120,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="18" Margin="120,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" Grid.RowSpan="2" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="0,55,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel2" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="CON" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
+                    <TextBox x:Name="SFromData2" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="0,110,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel3" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="DEX" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
+                    <TextBox x:Name="SFromData3" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel4" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="SIZ" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
+                    <TextBox x:Name="SFromData4" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,55,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel5" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="POW" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
+                    <TextBox x:Name="SFromData5" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,110,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel6" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="APP" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
+                    <TextBox x:Name="SFromData6" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel7" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="EDU" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
+                    <TextBox x:Name="SFromData7" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,55,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel8" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="INT" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
+                    <TextBox x:Name="SFromData8" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,110,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="SLabel9" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="MOVE" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="19" Height="30" TextAlignment="Center"/>
+                    <TextBox x:Name="SFromData9" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="1" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                    <TextBox Height="19" Margin="119,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" TextChanged="TextBox_TextChanged" Text="3" Background="{x:Null}" BorderBrush="#FF2C374F" Foreground="#FF2C374F" BorderThickness="1" FontSize="14" HorizontalAlignment="Left" Width="25" IsReadOnly="True"/>
+                </Grid>
             </Grid>
         </Grid>
     </Grid>
