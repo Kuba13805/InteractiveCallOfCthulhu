@@ -83,6 +83,11 @@ namespace CthulhuPlayerCard
             SanityBox.Text = GetSanity(int.Parse(GetPowerFromTable()));
             HitPointsBox.Text = GetHitPoints(int.Parse(GetConstitutionFromTable()), int.Parse(GetSizeFromTable()));
             MagicPointsBox.Text = GetMagicPoints(float.Parse(GetPowerFromTable()));
+            HistoryFromData.Text = GetHistoryFromTable();
+            BrawlFromData.Text = GetBrawlFromTable();
+            PerceptivityFromData.Text = GetPerceptivityFromTable();
+            FirstAidFromData.Text = GetFirstAidFromTable();
+            FirearmFromData.Text = GetFirearmFromTable();
         }
         private string GetProfessionFromTable()
         {
@@ -112,6 +117,14 @@ namespace CthulhuPlayerCard
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             string sexFromTable = sqlCommand.ExecuteScalar().ToString();
+            if (sexFromTable == "M")
+            {
+                sexFromTable = "Male";
+            }
+            else
+            {
+                sexFromTable = "Female";
+            }
             return sexFromTable;
         }
         private string GetPlaceOfResidenceFromTable()
@@ -223,6 +236,56 @@ namespace CthulhuPlayerCard
             sqlCommand.CommandText = sql;
             string luckFromTable = sqlCommand.ExecuteScalar().ToString();
             return luckFromTable;
+        }
+        private string GetHistoryFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Historia FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string hisotryFromTable = sqlCommand.ExecuteScalar().ToString();
+            return hisotryFromTable;
+        }
+        private string GetBrawlFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Bijatyka FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string brawlFromTable = sqlCommand.ExecuteScalar().ToString();
+            return brawlFromTable;
+        }
+        private string GetPerceptivityFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Spostrzegawczosc FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string PerceptivityFromTable = sqlCommand.ExecuteScalar().ToString();
+            return PerceptivityFromTable;
+        }
+        private string GetFirstAidFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Pierwsza_Pomoc FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string FirstAidFromTable = sqlCommand.ExecuteScalar().ToString();
+            return FirstAidFromTable;
+        }
+        private string GetFirearmFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Bron_Palna FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string FirearmFromTable = sqlCommand.ExecuteScalar().ToString();
+            return FirearmFromTable;
         }
         private string GetSanity(int power)
         {
@@ -343,11 +406,36 @@ namespace CthulhuPlayerCard
         }
         private void RollSanityButton_Click(object sender, RoutedEventArgs e)
         {
-
+            TestAttributeOrSkill(int.Parse(SanityBox.Text));
         }
         private void RollLuckButton_Click(object sender, RoutedEventArgs e)
         {
+            TestAttributeOrSkill(int.Parse(GetLuckFromTable()));
+        }
 
+        private void RollHistoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetHistoryFromTable()));
+        }
+
+        private void RollBrawlButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetBrawlFromTable()));
+        }
+
+        private void RollPerceptivityButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetPerceptivityFromTable()));
+        }
+
+        private void RollFirstAidButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetFirstAidFromTable()));
+        }
+
+        private void RollFirearmButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetFirearmFromTable()));
         }
     }
 }
