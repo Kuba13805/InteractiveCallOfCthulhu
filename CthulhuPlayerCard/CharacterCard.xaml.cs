@@ -91,6 +91,8 @@ namespace CthulhuPlayerCard
             BuildFromData.Text = GetBuild(int.Parse(GetStrenghtFromTable()), int.Parse(GetSizeFromTable()));
             DamageModifierFromData.Text = GetDamageModifier(int.Parse(GetBuild(int.Parse(GetStrenghtFromTable()), int.Parse(GetSizeFromTable()))));
             DodgeFromData.Text = GetDodge(int.Parse(GetDexterityFromTable()));
+            PersonalThingTypeFromData.Text = GetPersonalThingTypeFromTable();
+            PersonalThingNameFromData.Text = GetPersonalThingNameFromTable();
         }
         private string GetProfessionFromTable()
         {
@@ -289,6 +291,26 @@ namespace CthulhuPlayerCard
             sqlCommand.CommandText = sql;
             string FirearmFromTable = sqlCommand.ExecuteScalar().ToString();
             return FirearmFromTable;
+        }
+        private string GetPersonalThingTypeFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Nazwa_typu FROM ListaPrzedmiotow WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string PersonalThingTypeFromTable = sqlCommand.ExecuteScalar().ToString();
+            return PersonalThingTypeFromTable;
+        }
+        private string GetPersonalThingNameFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Nazwa_przedmiotu FROM ListaPrzedmiotow WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string PersonalThingNameFromTable = sqlCommand.ExecuteScalar().ToString();
+            return PersonalThingNameFromTable;
         }
         private string GetSanity(int power)
         {
@@ -526,6 +548,12 @@ namespace CthulhuPlayerCard
         private void RollDodgeButton_Click(object sender, RoutedEventArgs e)
         {
             TestAttributeOrSkill(int.Parse(GetDodge(int.Parse(GetDexterityFromTable()))));
+        }
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadCharacterWindow Window = new LoadCharacterWindow();
+            Window.Show();
+            Close();
         }
     }
 }

@@ -36,5 +36,12 @@ namespace CthulhuPlayerCard
             CharacterWindow.Show();
             Close();
         }
+
+        private void OptionsButton_Click(object sender, RoutedEventArgs e)
+        { 
+            Options CharacterWindow = new Options();
+            CharacterWindow.Show();
+            Close();
+        }
     }
 }
