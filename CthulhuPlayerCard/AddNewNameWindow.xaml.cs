@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace CthulhuPlayerCard
 {
@@ -19,6 +20,7 @@ namespace CthulhuPlayerCard
     /// </summary>
     public partial class AddNewNameWindow : Window
     {
+        string ChoosenId;
         public AddNewNameWindow()
         {
             InitializeComponent();
@@ -33,8 +35,18 @@ namespace CthulhuPlayerCard
             projekt_CthulhuDataSetImionaTableAdapter.Fill(projekt_CthulhuDataSet.Imiona);
             System.Windows.Data.CollectionViewSource imionaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("imionaViewSource")));
             imionaViewSource.View.MoveCurrentToFirst();
+            
         }
-
+        private void CheckName(string givenName)
+        {
+            int SearchedId;
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT COUNT(*) FROM ListaPostaci where Id_postaci = " + LoadedCharacterID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            SearchedId = Convert.ToInt32(sqlCommand.ExecuteScalar());
+        }
         private void AddNameButton_Click(object sender, RoutedEventArgs e)
         {
 
