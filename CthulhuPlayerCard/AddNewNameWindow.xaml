@@ -1,0 +1,38 @@
+﻿<Window x:Class="CthulhuPlayerCard.AddNewNameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CthulhuPlayerCard"
+        mc:Ignorable="d"
+        Title="AddNewNameWindow" Height="500" Width="800" Background="#FFD6DBDE" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
+        <CollectionViewSource x:Key="imionaViewSource" Source="{Binding Imiona, Source={StaticResource projekt_CthulhuDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource imionaViewSource}">
+        <DataGrid x:Name="imionaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="196,10,196,259" RowDetailsVisibilityMode="VisibleWhenSelected" ColumnWidth="SizeToHeader" RowHeaderWidth="0" CanUserResizeColumns="False" MinColumnWidth="70">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id_imieniaColumn" Binding="{Binding Id_imienia}" Header="Name Id" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="imieColumn" Binding="{Binding Imie}" Header="Name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="pochodzenie_imieniaColumn" Binding="{Binding Pochodzenie_imienia}" Header="Name Origin" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="plec_imieniaColumn" Binding="{Binding Plec_imienia}" Header="Name Sex" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid HorizontalAlignment="Left" Height="240" Margin="10,219,0,0" VerticalAlignment="Top" Width="772">
+            <Grid HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="752">
+                <TextBox x:Name="EnterNewName" Height="40" Margin="442,30,80,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="20"/>
+                <TextBox x:Name="EnterID" Height="40" Margin="80,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="20" HorizontalAlignment="Left" Width="230"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="352,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontFamily="Rockwell"><Run FontSize="15" Text="Enter "/><Run FontSize="15" Text="name"/><Run Text=":"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="26,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" FontFamily="Rockwell" Text="Enter ID:"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="125" Margin="10,115,0,0" VerticalAlignment="Top" Width="752">
+                <Button x:Name="AddName" Content="Add" HorizontalAlignment="Left" Height="50" Margin="40,10,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="AddNameButton_Click"/>
+                <Button x:Name="ClearSpace" Content="Clear" Height="50" Margin="301,10,301,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="ClearTexboxButton_Click"/>
+                <Button x:Name="DeleteName" Content="Delete" HorizontalAlignment="Right" Height="50" Margin="0,10,40,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="DeleteNameButton_Click"/>
+                <Button x:Name="BackButton" Content="Back" Height="50" Margin="170,75,0,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="BackButtonClick" HorizontalAlignment="Left" Width="150"/>
+                <Button x:Name="AddName_Copy1" Content="" Height="50" Margin="0,75,170,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" HorizontalAlignment="Right" Width="150"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

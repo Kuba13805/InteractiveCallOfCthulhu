@@ -67,8 +67,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddNamePage.xaml.cs">
-      <DependentUpon>AddNamePage.xaml</DependentUpon>
+    <Compile Include="AddNewNameWindow.xaml.cs">
+      <DependentUpon>AddNewNameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewPersonalThingType.xaml.cs">
+      <DependentUpon>AddNewPersonalThingType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewProfessionWindow.xaml.cs">
+      <DependentUpon>AddNewProfessionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewSurnameWindow.xaml.cs">
+      <DependentUpon>AddNewSurnameWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="CharacterCard.xaml.cs">
       <DependentUpon>CharacterCard.xaml</DependentUpon>
@@ -107,7 +116,19 @@
     <Compile Include="Zawody.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Page Include="AddNamePage.xaml">
+    <Page Include="AddNewNameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewPersonalThingType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewProfessionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewSurnameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CthulhuPlayerCard
 {
     /// <summary>
-    /// Interaction logic for AddNamePage.xaml
+    /// Interaction logic for AddNewProfessionWindow.xaml
     /// </summary>
-    public partial class AddNamePage : Page
+    public partial class AddNewProfessionWindow : Window
     {
-        public AddNamePage()
+        public AddNewProfessionWindow()
         {
             InitializeComponent();
         }

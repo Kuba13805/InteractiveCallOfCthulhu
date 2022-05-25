@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\App.xaml
-52029333446
+81382365257
 21750853300
-191672885337
+22-814405645
 18-122512274
-AddNamePage.xaml;CharacterCard.xaml;LoadCharacterWindow.xaml;MainWindow.xaml;Options.xaml;
+AddNewNameWindow.xaml;AddNewPersonalThingType.xaml;AddNewProfessionWindow.xaml;AddNewSurnameWindow.xaml;CharacterCard.xaml;LoadCharacterWindow.xaml;MainWindow.xaml;Options.xaml;
 
 False
 

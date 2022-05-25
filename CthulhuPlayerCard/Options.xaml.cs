@@ -23,16 +23,41 @@ namespace CthulhuPlayerCard
         public Options()
         {
             InitializeComponent();
+            VersionBox.Text = "1.0v";
         }
 
-        private void NewCharacterButton_Copy2_Click(object sender, RoutedEventArgs e)
+        private void AddNameButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AddNewNameWindow NewName = new AddNewNameWindow();
+            NewName.Show();
+            Close();
         }
+
+        private void AddSurnameButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewSurnameWindow NewSurname = new AddNewSurnameWindow();
+            NewSurname.Show();
+            Close();
+        }
+
+        private void AddPersonalItemTypeButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewPersonalThingType NewItem = new AddNewPersonalThingType();
+            NewItem.Show();
+            Close();
+        }
+
+        private void AddProfesionButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewProfessionWindow NewProfession = new AddNewProfessionWindow();
+            NewProfession.Show();
+            Close();
+        }
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow Window = new MainWindow();
-            Window.Show();
+            MainWindow Back = new MainWindow();
+            Back.Show();
             Close();
         }
     }
