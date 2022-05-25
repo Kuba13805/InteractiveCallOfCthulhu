@@ -88,6 +88,9 @@ namespace CthulhuPlayerCard
             PerceptivityFromData.Text = GetPerceptivityFromTable();
             FirstAidFromData.Text = GetFirstAidFromTable();
             FirearmFromData.Text = GetFirearmFromTable();
+            BuildFromData.Text = GetBuild(int.Parse(GetStrenghtFromTable()), int.Parse(GetSizeFromTable()));
+            DamageModifierFromData.Text = GetDamageModifier(int.Parse(GetBuild(int.Parse(GetStrenghtFromTable()), int.Parse(GetSizeFromTable()))));
+            DodgeFromData.Text = GetDodge(int.Parse(GetDexterityFromTable()));
         }
         private string GetProfessionFromTable()
         {
@@ -310,6 +313,57 @@ namespace CthulhuPlayerCard
             string move = CalculateMove(int.Parse(GetStrenghtFromTable()), int.Parse(GetDexterityFromTable()), int.Parse(GetSizeFromTable()), int.Parse(GetAgeFromTable())).ToString();
             return move;
         }
+        private string GetBuild(int strenght, int size)
+        {
+            int build = 0;
+            int strSizAddition = strenght + size;
+            if (strSizAddition > 2 && strSizAddition < 64)
+            {
+                build = -2;
+            }
+            else if (strSizAddition > 65 && strSizAddition < 84)
+            {
+                build = -1;
+            }
+            else if (strSizAddition > 85 && strSizAddition < 124)
+            {
+                build = 0;
+            }
+            else if (strSizAddition > 125 && strSizAddition < 164)
+            {
+                build = 1;
+            }
+            else if (strSizAddition > 165 && strSizAddition < 204)
+            {
+                build = 2;
+            }
+            return build.ToString();
+        }
+        private string GetDamageModifier(int build)
+        {
+            string damageModifier = "";
+            if (build == -2)
+            {
+                damageModifier = "-2";
+            }
+            else if (build == -1)
+            {
+                damageModifier = "-1";
+            }
+            else if (build == 0)
+            {
+                damageModifier = "0";
+            }
+            else if (build == 1)
+            {
+                damageModifier = "+1D4";
+            }
+            else if (build == 2)
+            {
+                damageModifier = "+1D6";
+            }
+            return damageModifier;
+        }
         private int CalculateMove(int strength, int dexterity, int size, int age)
         {
             int move = 0;
@@ -348,6 +402,13 @@ namespace CthulhuPlayerCard
             }
             return move + disadvantageFromAge;
         }
+        private string GetDodge(double dexterity)
+        {
+            int result = 0;
+            double dodge = dexterity / 2;
+            result = Convert.ToInt32(Math.Floor(dodge));
+            return result.ToString();
+        }
         private void TestAttributeOrSkill(int chance)
         {
             
@@ -371,6 +432,25 @@ namespace CthulhuPlayerCard
                 MessageBox.Show("Critical failure! Roll result: " + rollResult + ".", "Critical failure!");
             }
 
+        }
+        private void TestDamageModifier()
+        {
+            if (BuildFromData.Text == "1")
+            {
+            Random roll = new Random();
+            int rollResult = roll.Next(1, 4);
+            MessageBox.Show("You add " + rollResult + " to your damage.", "Damage modifier");
+            }
+            else if (BuildFromData.Text == "2")
+            {
+            Random roll = new Random();
+            int rollResult = roll.Next(1, 6);
+            MessageBox.Show("You add " + rollResult + " to your damage.", "Damage modifier");
+            }
+            else
+            {
+                MessageBox.Show("You add " + BuildFromData.Text + " to your damage.", "Damage modifier");
+            }
         }
         private void RollStrengthButton_Click(object sender, RoutedEventArgs e)
         {
@@ -436,6 +516,16 @@ namespace CthulhuPlayerCard
         private void RollFirearmButton_Click(object sender, RoutedEventArgs e)
         {
             TestAttributeOrSkill(int.Parse(GetFirearmFromTable()));
+        }
+
+        private void RollDamageModifierButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestDamageModifier();
+        }
+
+        private void RollDodgeButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetDodge(int.Parse(GetDexterityFromTable()))));
         }
     }
 }
