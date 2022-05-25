@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuPlayerCard"
         mc:Ignorable="d"
-        Title="CharacterCard" Height="659" Width="1171.556" Background="#FFD6DBDE" Loaded="Window_Loaded">
+        Title="CharacterCard" Height="789" Width="1447.556" Background="#FFD6DBDE" Loaded="Window_Loaded">
     <Window.Resources>
         <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
         <CollectionViewSource x:Key="listaPostaciViewSource" Source="{Binding ListaPostaci, Source={StaticResource projekt_CthulhuDataSet}}"/>
@@ -93,7 +93,7 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel3" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="DEX" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData3" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <TextBox x:Name="DexFromData" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
                     <Button x:Name="RollDexterity" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollDexterityButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,0,0,0">
@@ -102,8 +102,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel4" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="SIZ" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData4" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <Button x:Name="RollStrength_Copy2" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
+                    <TextBox x:Name="SizeFromData" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollSize" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollSizeButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,55,0,0">
                     <Grid.RowDefinitions>
@@ -111,8 +111,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel5" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="POW" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData5" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <Button x:Name="RollStrength_Copy3" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
+                    <TextBox x:Name="PowFromData" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollPower" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollPowerButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,110,0,0">
                     <Grid.RowDefinitions>
@@ -120,8 +120,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel6" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="APP" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData6" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <Button x:Name="RollStrength_Copy4" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
+                    <TextBox x:Name="AppFromData" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollAppearance" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollAppearanceButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,0,0,0">
                     <Grid.RowDefinitions>
@@ -129,8 +129,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel7" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="EDU" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData7" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <Button x:Name="RollStrength_Copy5" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
+                    <TextBox x:Name="EduFromData" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollEducation" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollEducationButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,55,0,0">
                     <Grid.RowDefinitions>
@@ -138,8 +138,8 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel8" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="INT" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData8" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <Button x:Name="RollStrength_Copy6" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
+                    <TextBox x:Name="IntFromData" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
+                    <Button x:Name="RollInteligence" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollInteligenceButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,110,0,0">
                     <Grid.RowDefinitions>
@@ -147,9 +147,44 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel9" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="MOVE" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="19" Height="30" TextAlignment="Center"/>
-                    <TextBox x:Name="SFromData9" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
-                    <Button x:Name="RollStrength_Copy7" Content="Roll" HorizontalAlignment="Left" Height="20" Margin="120,15,0,0" VerticalAlignment="Top" Width="20" Click="RollStrengthButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White"/>
+                    <TextBox x:Name="MoveBox" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True"/>
                 </Grid>
+            </Grid>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="200" Margin="980,20,0,0" VerticalAlignment="Top" Width="274">
+            <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="120" Margin="0,30,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="SLabel10" HorizontalAlignment="Left" Margin="0,0,0,50" TextWrapping="Wrap" Text="Sanity" Width="120" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="20" Height="30" TextAlignment="Center" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="SanityBox" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True" Height="40" VerticalAlignment="Bottom"/>
+                <Button x:Name="RollSanity" Content="Roll" HorizontalAlignment="Left" Margin="84,0,0,15" Width="20" Click="RollSanityButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White" Height="20" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="120" Margin="125,30,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="SLabel11" HorizontalAlignment="Left" Margin="0,0,0,50" TextWrapping="Wrap" Text="Luck" Width="120" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="20" Height="30" TextAlignment="Center" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="LuckFromData" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True" Height="40" VerticalAlignment="Bottom"/>
+                <Button x:Name="RollLuck" Content="Roll" HorizontalAlignment="Left" Margin="84,0,0,15" Width="20" Click="RollLuckButton_Click" FontSize="9" FontFamily="Rockwell" Background="#FF2C374F" BorderBrush="#FF2C374F" Foreground="White" Height="20" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="120" Margin="0,115,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="SLabel12" HorizontalAlignment="Left" Margin="0,0,0,50" TextWrapping="Wrap" Text="Hit Points" Width="120" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="20" Height="30" TextAlignment="Center" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="HitPointsBox" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True" Height="40" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="120" Margin="125,115,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="SLabel13" HorizontalAlignment="Left" Margin="0,0,0,50" TextWrapping="Wrap" Width="120" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="20" Height="30" TextAlignment="Center" VerticalAlignment="Bottom"><Run Text="Magic "/><Run Text="Points"/></TextBlock>
+                <TextBox x:Name="MagicPointsBox" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True" Height="40" VerticalAlignment="Bottom"/>
             </Grid>
         </Grid>
     </Grid>

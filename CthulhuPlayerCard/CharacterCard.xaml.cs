@@ -72,10 +72,17 @@ namespace CthulhuPlayerCard
             CountryOfBirthFromData.Text = GetCountryOfBirthFromTable();
             SFromData.Text = GetStrenghtFromTable();
             ConFromData.Text = GetConstitutionFromTable();
-
-
-
-
+            DexFromData.Text = GetDexterityFromTable();
+            SizeFromData.Text = GetSizeFromTable();
+            PowFromData.Text = GetPowerFromTable();
+            AppFromData.Text = GetPowerFromTable();
+            EduFromData.Text = GetEducationFromTable();
+            IntFromData.Text = GetIntelligenceFromTable();
+            LuckFromData.Text = GetLuckFromTable();
+            MoveBox.Text = GetMove();
+            SanityBox.Text = GetSanity(int.Parse(GetPowerFromTable()));
+            HitPointsBox.Text = GetHitPoints(int.Parse(GetConstitutionFromTable()), int.Parse(GetSizeFromTable()));
+            MagicPointsBox.Text = GetMagicPoints(float.Parse(GetPowerFromTable()));
         }
         private string GetProfessionFromTable()
         {
@@ -141,11 +148,142 @@ namespace CthulhuPlayerCard
         {
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "SELECT Budowa_ciala FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            string sql = "SELECT Kondycja FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             string constitutionFromTable = sqlCommand.ExecuteScalar().ToString();
             return constitutionFromTable;
+        }
+        private string GetDexterityFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Zrecznosc FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string dexterityFromTable = sqlCommand.ExecuteScalar().ToString();
+            return dexterityFromTable;
+        }
+        private string GetSizeFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Budowa_ciala FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string dexterityFromTable = sqlCommand.ExecuteScalar().ToString();
+            return dexterityFromTable;
+        }
+        private string GetPowerFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Moc FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string dexterityFromTable = sqlCommand.ExecuteScalar().ToString();
+            return dexterityFromTable;
+        }
+        private string GetAppearanceFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Wyglad FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string dexterityFromTable = sqlCommand.ExecuteScalar().ToString();
+            return dexterityFromTable;
+        }
+        private string GetEducationFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Wyksztalcenie FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string educationFromTable = sqlCommand.ExecuteScalar().ToString();
+            return educationFromTable;
+        }
+        private string GetIntelligenceFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Inteligencja FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string educationFromTable = sqlCommand.ExecuteScalar().ToString();
+            return educationFromTable;
+        }
+        private string GetLuckFromTable()
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "SELECT Szczescie FROM Spis_postaci WHERE Id_postaci = " + ChoosenID.ToString() + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            string luckFromTable = sqlCommand.ExecuteScalar().ToString();
+            return luckFromTable;
+        }
+        private string GetSanity(int power)
+        {
+            string sanity = power.ToString();
+            return sanity;
+        }
+        private string GetHitPoints(int constitution, int size)
+        {
+            string hitPoints = ((constitution + size)/10).ToString();
+            return hitPoints;
+        }
+        private string GetMagicPoints(double power)
+        {
+            double magicPoints;
+            int result = 0;
+            magicPoints = power / 5;
+            result = Convert.ToInt32(Math.Floor(magicPoints));
+            return result.ToString();
+        }
+        private string GetMove()
+        {
+            string move = CalculateMove(int.Parse(GetStrenghtFromTable()), int.Parse(GetDexterityFromTable()), int.Parse(GetSizeFromTable()), int.Parse(GetAgeFromTable())).ToString();
+            return move;
+        }
+        private int CalculateMove(int strength, int dexterity, int size, int age)
+        {
+            int move = 0;
+            if ((strength < size) && (dexterity < size))
+            {
+                move = 7;
+            }
+            else if ((strength >= size) || (dexterity >= size) || ((strength == size) && (dexterity == size)))
+            {
+                move = 8;
+            }
+            else if ((strength > size) && (dexterity > size))
+            {
+                move = 9;
+            }
+            int disadvantageFromAge = 0;
+            if ((age >= 40) && (age <=49))
+            {
+                disadvantageFromAge = - 1;
+            }
+            else if ((age >= 50) && (age <= 59))
+            {
+                disadvantageFromAge = -2;
+            }
+            else if ((age >= 60) && (age <= 69))
+            {
+                disadvantageFromAge = -3;
+            }
+            else if ((age >= 70) && (age <= 79))
+            {
+                disadvantageFromAge = -4;
+            }
+            else if ((age >= 80) && (age <= 90))
+            {
+                disadvantageFromAge = -5;
+            }
+            return move + disadvantageFromAge;
         }
         private void TestAttributeOrSkill(int chance)
         {
@@ -175,13 +313,39 @@ namespace CthulhuPlayerCard
         {
             TestAttributeOrSkill(int.Parse(GetStrenghtFromTable()));
         }
-
         private void RollConstitutionButton_Click(object sender, RoutedEventArgs e)
         {
             TestAttributeOrSkill(int.Parse(GetConstitutionFromTable()));
         }
-
         private void RollDexterityButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetDexterityFromTable()));
+        }
+        private void RollSizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetSizeFromTable()));
+        }
+        private void RollPowerButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetPowerFromTable()));
+        }
+        private void RollAppearanceButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetAppearanceFromTable()));
+        }
+        private void RollEducationButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetEducationFromTable()));
+        }
+        private void RollInteligenceButton_Click(object sender, RoutedEventArgs e)
+        {
+            TestAttributeOrSkill(int.Parse(GetIntelligenceFromTable()));
+        }
+        private void RollSanityButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void RollLuckButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

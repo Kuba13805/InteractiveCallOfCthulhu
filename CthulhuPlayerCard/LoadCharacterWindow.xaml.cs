@@ -46,16 +46,16 @@ namespace CthulhuPlayerCard
         {
 
         }
-        private int LastRowID()
+        private int SearchForId()
         {
-            int rowCount;
+            int SearchedId;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "SELECT COUNT(*) FROM ListaPostaci";
+            string sql = "SELECT COUNT(*) FROM ListaPostaci where Id_postaci = " + LoadedCharacterID.ToString() + ";";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
-            rowCount = Convert.ToInt32(sqlCommand.ExecuteScalar());
-            return rowCount;
+            SearchedId = Convert.ToInt32(sqlCommand.ExecuteScalar());
+            return SearchedId;
         }
         private void GettingCharacterId(string TextboxString)
         {
@@ -67,8 +67,8 @@ namespace CthulhuPlayerCard
                 MessageBoxResult result = MessageBox.Show(message, caption);
                 CharacterIdInput.Clear();
             }
-            int rowCount = LastRowID();
-            if ((_LoadedCharacterID > rowCount) ^ (_LoadedCharacterID < 0))
+            int SearchedId = SearchForId();
+            if (SearchedId == 0 && success == true)
             {
                 MessageBox.Show("Character with this ID does not exist!", "Character not found!");
                 success = false;
@@ -104,9 +104,19 @@ namespace CthulhuPlayerCard
         }
         private void DeleteCharacterData(object sender)
         {
-            if (MessageBox.Show("Are you sure you want to delete this character?", "Delete character", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete this character?", "Delete character?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                
+                int IdToDelete;
+                SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+                sqlConnection.Open();
+                string sql = "DELETE FROM Spis_postaci WHERE Id_postaci = " + LoadedCharacterID.ToString() + ";";
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                sqlCommand.CommandText = sql;
+                IdToDelete = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                MessageBox.Show("Character with id: " + LoadedCharacterID.ToString() + " has been removed.", "Character deleted!");
+                LoadCharacterWindow Window = new LoadCharacterWindow();
+                Window.Show();
+                Close();
             }
         }
     }
