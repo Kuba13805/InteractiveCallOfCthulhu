@@ -23,6 +23,7 @@ namespace CthulhuPlayerCard
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void ButtonExitClick(object sender, RoutedEventArgs e)

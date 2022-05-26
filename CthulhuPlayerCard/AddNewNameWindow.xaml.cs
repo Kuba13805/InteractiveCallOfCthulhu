@@ -70,7 +70,7 @@ namespace CthulhuPlayerCard
                 restOfNewGivenWord = restOfNewGivenWord + arr[i];
             }
             firstLetter = arr[0];
-            string updatedWord = firstLetter + restOfNewGivenWord;
+            string updatedWord = firstLetter + restOfNewGivenWord.ToLower();
             return updatedWord;
         }
         private bool CheckNameSex()
@@ -118,18 +118,15 @@ namespace CthulhuPlayerCard
                 string nameSexToInput = EnterNameSex.Text;
                 InsertIntoNamesTable(nameToInput, originToInput, nameSexToInput, idToInput);
             }
-
-
         }
         private void InsertIntoNamesTable(string name, string origin, string nameSex, int id)
         {
-            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
-            sqlConnection.Open();
-            string sql = "insert into Imiona(Id_imienia, Imie, Pochodzenie_imienia, Plec_imienia) values(" + id + ',' + name + ',' + origin + ',' + nameSex + ");";
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-            sqlCommand.CommandText = sql;
-            SqlDataReader reader = sqlCommand.ExecuteReader();
+            Projekt_CthulhuDataSetTableAdapters.ImionaTableAdapter imionaTableAdapter = new Projekt_CthulhuDataSetTableAdapters.ImionaTableAdapter();
+            imionaTableAdapter.Insert(id.ToString(), name, origin, nameSex);
             MessageBox.Show("Name " + '"' + name + '"' + " with id: " + '"' + id+ '"' + " has been added", "Name added");
+            AddNewNameWindow Window = new AddNewNameWindow();
+            Window.Show();
+            Close();
         }
         private void ClearTexboxButton_Click(object sender, RoutedEventArgs e)
         {

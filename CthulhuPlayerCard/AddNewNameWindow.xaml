@@ -1,17 +1,18 @@
-﻿<Window x:Class="CthulhuPlayerCard.AddNewNameWindow"
+﻿<Window WindowStartupLocation="CenterScreen" x:Class="CthulhuPlayerCard.AddNewNameWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuPlayerCard"
         mc:Ignorable="d"
-        Title="AddNewNameWindow" Height="500" Width="800" Background="#FFD6DBDE" Loaded="Window_Loaded">
+        Title="AddNewNameWindow" Height="500" Width="800" Background="#FFD6DBDE" Loaded="Window_Loaded" MinWidth="800" MinHeight="500" MaxWidth="800" MaxHeight="500">
+       
     <Window.Resources>
         <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
         <CollectionViewSource x:Key="imionaViewSource" Source="{Binding Imiona, Source={StaticResource projekt_CthulhuDataSet}}"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource imionaViewSource}">
-        <DataGrid x:Name="imionaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="196,10,196,259" RowDetailsVisibilityMode="VisibleWhenSelected" ColumnWidth="SizeToHeader" RowHeaderWidth="0" CanUserResizeColumns="False" MinColumnWidth="70">
+        <DataGrid x:Name="imionaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="196,10,196,259" RowDetailsVisibilityMode="VisibleWhenSelected" ColumnWidth="SizeToHeader" RowHeaderWidth="0" CanUserResizeColumns="False" MinColumnWidth="70" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="id_imieniaColumn" Binding="{Binding Id_imienia}" Header="Name Id" IsReadOnly="True" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="imieColumn" Binding="{Binding Imie}" Header="Name" Width="SizeToHeader"/>
