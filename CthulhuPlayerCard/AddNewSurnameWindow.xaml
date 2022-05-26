@@ -1,12 +1,40 @@
-﻿<Window x:Class="CthulhuPlayerCard.AddNewSurnameWindow"
+﻿<Window WindowStartupLocation="CenterScreen" x:Class="CthulhuPlayerCard.AddNewSurnameWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuPlayerCard"
         mc:Ignorable="d"
-        Title="AddNewSurnameWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="AddNewSurnameWindow" Height="500" Width="800" Loaded="Window_Loaded" MinWidth="800" MinHeight="500" MaxWidth="800" MaxHeight="500" Background="#FFD6DBDE">
+    <Window.Resources>
+        <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
+        <CollectionViewSource x:Key="nazwiskaViewSource" Source="{Binding Nazwiska, Source={StaticResource projekt_CthulhuDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource nazwiskaViewSource}">
+        <DataGrid x:Name="nazwiskaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="196,10,196,259" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True" MinColumnWidth="70" CanUserReorderColumns="False" CanUserResizeColumns="False" RowHeaderWidth="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id_nazwiskaColumn" Binding="{Binding Id_nazwiska}" Header="Id nazwiska" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nazwiskoColumn" Binding="{Binding Nazwisko}" Header="Nazwisko" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="pochodzenie_nazwiskaColumn" Binding="{Binding Pochodzenie_nazwiska}" Header="Pochodzenie nazwiska" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid HorizontalAlignment="Left" Height="240" Margin="10,219,0,0" VerticalAlignment="Top" Width="772">
+            <Grid HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="752">
+                <TextBox x:Name="EnterNewSurname" Height="20" Margin="442,10,80,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell"/>
+                <TextBox x:Name="EnterID" Height="20" Margin="80,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" HorizontalAlignment="Left" Width="230"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="332,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="105" FontFamily="Rockwell"><Run FontSize="15" Text="Enter "/><Run FontSize="15" Text="sur"/><Run FontSize="15" Text="name"/><Run Text=":"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="26,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" FontFamily="Rockwell" Text="Enter ID:"/>
+                <TextBox x:Name="EnterSurnameOrigin" Height="20" Margin="344,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" HorizontalAlignment="Left" Width="191"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="218,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121" FontFamily="Rockwell"><Run Text="Enter "/><Run Text="sur"/><Run Text="name origin"/><Run Text=":"/></TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="125" Margin="10,115,0,0" VerticalAlignment="Top" Width="752">
+                <Button x:Name="AddSurname" Content="Add" HorizontalAlignment="Left" Height="50" Margin="40,10,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="AddSurnameButton_Click"/>
+                <Button x:Name="ClearSpace" Content="Clear" Height="50" Margin="301,10,301,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="ClearTexboxButton_Click"/>
+                <Button x:Name="DeleteSurname" Content="Delete" HorizontalAlignment="Right" Height="50" Margin="0,10,40,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="DeleteSurnameButton_Click"/>
+                <Button x:Name="BackButton" Content="Back" Height="50" Margin="170,75,0,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="BackButtonClick" HorizontalAlignment="Left" Width="150"/>
+                <Button x:Name="AddName_Copy1" Content="" Height="50" Margin="0,75,170,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" HorizontalAlignment="Right" Width="150"/>
+            </Grid>
+        </Grid>
+
     </Grid>
 </Window>

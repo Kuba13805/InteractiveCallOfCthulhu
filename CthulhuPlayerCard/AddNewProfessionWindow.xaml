@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuPlayerCard"
         mc:Ignorable="d"
-        Title="AddNewProfessionWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="AddNewProfessionWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
+        <CollectionViewSource x:Key="zawodyViewSource" Source="{Binding Zawody, Source={StaticResource projekt_CthulhuDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource zawodyViewSource}">
+        <DataGrid x:Name="zawodyDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="200,95,192,124" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id_zawoduColumn" Binding="{Binding Id_zawodu}" Header="Id zawodu" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nazwa_zawoduColumn" Binding="{Binding Nazwa_zawodu}" Header="Nazwa zawodu" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="zwiazana_HistoriaColumn" Binding="{Binding Zwiazana_Historia}" Header="Zwiazana Historia" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="zwiazana_BijatykaColumn" Binding="{Binding Zwiazana_Bijatyka}" Header="Zwiazana Bijatyka" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="zwiazana_SpostrzegawczoscColumn" Binding="{Binding Zwiazana_Spostrzegawczosc}" Header="Zwiazana Spostrzegawczosc" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="zwiazana_Pierwsza_PomocColumn" Binding="{Binding Zwiazana_Pierwsza_Pomoc}" Header="Zwiazana Pierwsza Pomoc" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="zwiazana_Bron_PalnaColumn" Binding="{Binding Zwiazana_Bron_Palna}" Header="Zwiazana Bron Palna" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

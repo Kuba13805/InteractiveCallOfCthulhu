@@ -21,7 +21,6 @@ namespace CthulhuPlayerCard
     /// </summary>
     public partial class AddNewNameWindow : Window
     {
-        string ChoosenId;
         public AddNewNameWindow()
         {
             InitializeComponent();
@@ -36,7 +35,7 @@ namespace CthulhuPlayerCard
             projekt_CthulhuDataSetImionaTableAdapter.Fill(projekt_CthulhuDataSet.Imiona);
             System.Windows.Data.CollectionViewSource imionaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("imionaViewSource")));
             imionaViewSource.View.MoveCurrentToFirst();
-            
+
         }
         private bool CheckSpelling(string givenWord, string typeOfGivenWord)
         {
@@ -154,7 +153,7 @@ namespace CthulhuPlayerCard
                 SqlCommand sqlCommand = sqlConnection.CreateCommand();
                 sqlCommand.CommandText = sql;
                 IdToDelete = Convert.ToInt32(sqlCommand.ExecuteScalar());
-                MessageBox.Show("Name with id: " + EnterID.Text + " has been removed.", "Character deleted!");
+                MessageBox.Show("Name with id: " + EnterID.Text + " has been removed.", "Name deleted!");
                 AddNewNameWindow Window = new AddNewNameWindow();
                 Window.Show();
                 Close();

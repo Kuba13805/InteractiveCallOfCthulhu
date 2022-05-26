@@ -23,5 +23,16 @@ namespace CthulhuPlayerCard
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            CthulhuPlayerCard.Projekt_CthulhuDataSet projekt_CthulhuDataSet = ((CthulhuPlayerCard.Projekt_CthulhuDataSet)(this.FindResource("projekt_CthulhuDataSet")));
+            // Load data into the table Zawody. You can modify this code as needed.
+            CthulhuPlayerCard.Projekt_CthulhuDataSetTableAdapters.ZawodyTableAdapter projekt_CthulhuDataSetZawodyTableAdapter = new CthulhuPlayerCard.Projekt_CthulhuDataSetTableAdapters.ZawodyTableAdapter();
+            projekt_CthulhuDataSetZawodyTableAdapter.Fill(projekt_CthulhuDataSet.Zawody);
+            System.Windows.Data.CollectionViewSource zawodyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zawodyViewSource")));
+            zawodyViewSource.View.MoveCurrentToFirst();
+        }
     }
 }
