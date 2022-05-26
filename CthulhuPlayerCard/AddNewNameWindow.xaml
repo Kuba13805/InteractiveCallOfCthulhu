@@ -21,10 +21,14 @@
         </DataGrid>
         <Grid HorizontalAlignment="Left" Height="240" Margin="10,219,0,0" VerticalAlignment="Top" Width="772">
             <Grid HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="752">
-                <TextBox x:Name="EnterNewName" Height="40" Margin="442,30,80,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="20"/>
-                <TextBox x:Name="EnterID" Height="40" Margin="80,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="20" HorizontalAlignment="Left" Width="230"/>
-                <TextBlock HorizontalAlignment="Left" Height="20" Margin="352,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontFamily="Rockwell"><Run FontSize="15" Text="Enter "/><Run FontSize="15" Text="name"/><Run Text=":"/></TextBlock>
-                <TextBlock HorizontalAlignment="Left" Height="20" Margin="26,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" FontFamily="Rockwell" Text="Enter ID:"/>
+                <TextBox x:Name="EnterNewName" Height="20" Margin="442,10,80,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell"/>
+                <TextBox x:Name="EnterID" Height="20" Margin="80,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" HorizontalAlignment="Left" Width="230"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="352,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontFamily="Rockwell"><Run FontSize="15" Text="Enter "/><Run FontSize="15" Text="name"/><Run Text=":"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="26,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" FontFamily="Rockwell" Text="Enter ID:"/>
+                <TextBox x:Name="EnterNameSex" Height="20" Margin="442,47,80,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell"/>
+                <TextBox x:Name="EnterNameOrigin" Height="20" Margin="119,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" HorizontalAlignment="Left" Width="191"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="325,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" FontFamily="Rockwell"><Run FontSize="15" Text="Enter "/><Run FontSize="15" Text="name"/><Run FontSize="15" Text=" sex:"/></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontFamily="Rockwell"><Run Text="Enter name origin"/><Run Text=":"/></TextBlock>
             </Grid>
             <Grid HorizontalAlignment="Left" Height="125" Margin="10,115,0,0" VerticalAlignment="Top" Width="752">
                 <Button x:Name="AddName" Content="Add" HorizontalAlignment="Left" Height="50" Margin="40,10,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="AddNameButton_Click"/>
