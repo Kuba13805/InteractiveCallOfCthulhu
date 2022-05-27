@@ -87,6 +87,22 @@ namespace CthulhuPlayerCard
             }
             return nameSexChecked;
         }
+        private bool SearchForName(string nameSex, string origin)
+        {
+            bool nameInTable = true;
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "Select * FROM Imiona WHERE Pochodzenie_imienia = " + "'" + origin + "'" +" AND Plec_imienia = " +"'" + nameSex +"'" + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());
+            if (searchResult > 1)
+            {
+                MessageBox.Show("Name with the same origin and sex is already in table." + searchResult, "Name already in table!");
+                nameInTable = false;
+            }
+            return nameInTable;
+        }
         private int RandomId()
         {
             Random roll = new Random();
@@ -109,7 +125,8 @@ namespace CthulhuPlayerCard
             bool checkNameSpelling = CheckSpelling(EnterNewName.Text, "Enter name");
             bool checkOriginSpelling = CheckSpelling(EnterNameOrigin.Text, "Enter name origin");
             bool checkMaleFemaleName = CheckNameSex();
-            if (checkNameSpelling == true && checkOriginSpelling == true && checkMaleFemaleName == true)
+            bool checkIfNameIsInTable = SearchForName(EnterNameSex.Text, EnterNameOrigin.Text);
+            if (checkNameSpelling == true && checkOriginSpelling == true && checkMaleFemaleName == true && checkIfNameIsInTable == true)
             {
                 string nameToInput = UpdateWord(EnterNewName.Text);
                 string originToInput = UpdateWord(EnterNameOrigin.Text);

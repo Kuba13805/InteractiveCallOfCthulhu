@@ -71,18 +71,18 @@ namespace CthulhuPlayerCard
             string updatedWord = firstLetter + restOfNewGivenWord.ToLower();
             return updatedWord;
         }
-        private bool SearchForSurname(string givenSurname)
+        private bool SearchForSurname(string givenSurname, string origin)
         {
             bool surnameInTable = true;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "Select Nazwisko FROM Nazwiska WHERE Nazwisko = " + givenSurname + ";";
+            string sql = "Select Id_nazwiska FROM Nazwiska WHERE Pochodzenie_nazwiska = " + "'" + origin + "'" + ";";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());
-            if (searchResult == 1)
+            if (searchResult > 1)
             {
-                MessageBox.Show("Surname is already in table.", "Surname already in table!");
+                MessageBox.Show("Surname with the same origin is already in table.", "Surname already in table!");
                 surnameInTable = false;
             }
             return surnameInTable;        
@@ -108,8 +108,8 @@ namespace CthulhuPlayerCard
         {
             bool checkSurnameSpelling = CheckSpelling(EnterNewSurname.Text, "Enter surname");
             bool checkOriginSpelling = CheckSpelling(EnterSurnameOrigin.Text, "Enter surname origin");
-            bool checkIfSurnameIsInTable = SearchForSurname(EnterNewSurname.Text);
-            if (checkSurnameSpelling == true && checkOriginSpelling == true)
+            bool checkIfSurnameIsInTable = SearchForSurname(EnterNewSurname.Text, EnterSurnameOrigin.Text);
+            if (checkSurnameSpelling == true && checkOriginSpelling == true && checkIfSurnameIsInTable == true)
             {
                 string surnameToInput = UpdateWord(EnterNewSurname.Text);
                 string originToInput = UpdateWord(EnterSurnameOrigin.Text);
