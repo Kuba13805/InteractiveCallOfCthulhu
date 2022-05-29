@@ -53,7 +53,7 @@ namespace CthulhuPlayerCard
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());
-            if (searchResult > 1)
+            if (searchResult >= 1)
             {
                 MessageBox.Show("This profession is already in table.", "Profession already in table!");
                 professionInTable = false;

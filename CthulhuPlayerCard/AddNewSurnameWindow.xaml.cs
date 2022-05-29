@@ -166,17 +166,17 @@ namespace CthulhuPlayerCard
                 }
                 else
                 {
-                int IdToDelete;
-                SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
-                sqlConnection.Open();
-                string sql = "DELETE FROM Nazwiska WHERE Id_nazwiska = " + EnterID.Text + ";";
-                SqlCommand sqlCommand = sqlConnection.CreateCommand();
-                sqlCommand.CommandText = sql;
-                IdToDelete = Convert.ToInt32(sqlCommand.ExecuteScalar());
-                MessageBox.Show("Surname with id: " + EnterID.Text + " has been removed.", "Surname deleted!");
-                AddNewSurnameWindow Window = new AddNewSurnameWindow();
-                Window.Show();
-                Close();          
+                    int IdToDelete;
+                    SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+                    sqlConnection.Open();
+                    string sql = "DELETE FROM Nazwiska WHERE Id_nazwiska = " + EnterID.Text + ";";
+                    SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                    sqlCommand.CommandText = sql;
+                    IdToDelete = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                    MessageBox.Show("Surname with id: " + EnterID.Text + " has been removed.", "Surname deleted!");
+                    AddNewSurnameWindow Window = new AddNewSurnameWindow();
+                    Window.Show();
+                    Close();          
                 }
             }
         }

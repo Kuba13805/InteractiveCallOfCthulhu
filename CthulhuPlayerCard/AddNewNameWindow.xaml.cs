@@ -103,6 +103,21 @@ namespace CthulhuPlayerCard
             }
             return nameInTable;
         }
+        private bool SearchForCharacter(string nameID)
+        {
+            bool characterWithNameInTable = false;
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "Select Id_postaci FROM CzyIstniejePostac WHERE Id_imienia = " + "'" + nameID + "'" + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());
+            if (searchResult >= 1)
+            {
+                characterWithNameInTable = true;
+            }
+            return characterWithNameInTable;
+        }
         private int RandomId()
         {
             Random roll = new Random();
@@ -163,17 +178,25 @@ namespace CthulhuPlayerCard
         {
             if (MessageBox.Show("Are you sure you want to delete this name?", "Delete name?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                int IdToDelete;
-                SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
-                sqlConnection.Open();
-                string sql = "DELETE FROM Imiona WHERE Id_imienia = " + EnterID.Text + ";";
-                SqlCommand sqlCommand = sqlConnection.CreateCommand();
-                sqlCommand.CommandText = sql;
-                IdToDelete = Convert.ToInt32(sqlCommand.ExecuteScalar());
-                MessageBox.Show("Name with id: " + EnterID.Text + " has been removed.", "Name deleted!");
-                AddNewNameWindow Window = new AddNewNameWindow();
-                Window.Show();
-                Close();
+                bool canCharacterBeDeleted = SearchForCharacter(EnterID.Text);
+                if (canCharacterBeDeleted == true)
+                {
+                    MessageBox.Show("There is more than one character with this name. You cannot delete this name.", "Deleting not possible");
+                }
+                else
+                {
+                    int IdToDelete;
+                    SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+                    sqlConnection.Open();
+                    string sql = "DELETE FROM Imiona WHERE Id_imienia = " + EnterID.Text + ";";
+                    SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                    sqlCommand.CommandText = sql;
+                    IdToDelete = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                    MessageBox.Show("Name with id: " + EnterID.Text + " has been removed.", "Name deleted!");
+                    AddNewNameWindow Window = new AddNewNameWindow();
+                    Window.Show();
+                    Close();
+                }
             }
         }
 
