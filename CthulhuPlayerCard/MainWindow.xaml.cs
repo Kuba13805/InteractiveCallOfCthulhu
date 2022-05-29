@@ -33,15 +33,22 @@ namespace CthulhuPlayerCard
 
         private void LoadCharacterButtonClick(object sender, RoutedEventArgs e)
         {
-            LoadCharacterWindow CharacterWindow = new LoadCharacterWindow();
-            CharacterWindow.Show();
+            LoadCharacterWindow LoadCharacterWindow = new LoadCharacterWindow();
+            LoadCharacterWindow.Show();
             Close();
         }
 
         private void OptionsButton_Click(object sender, RoutedEventArgs e)
         { 
-            Options CharacterWindow = new Options();
-            CharacterWindow.Show();
+            Options Options = new Options();
+            Options.Show();
+            Close();
+        }
+
+        private void NewCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            NewCharacterWindow NewCharacterWindow = new NewCharacterWindow();
+            NewCharacterWindow.Show();
             Close();
         }
     }

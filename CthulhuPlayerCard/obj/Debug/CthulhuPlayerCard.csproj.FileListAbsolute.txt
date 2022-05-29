@@ -98,7 +98,5 @@ C:\Users\jakub\Documents\GitHub\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\D
 C:\Users\jakub\Documents\GitHub\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\CthulhuPlayerCard.csproj.CopyComplete
 C:\Users\jakub\Documents\GitHub\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\CthulhuPlayerCard.exe
 C:\Users\jakub\Documents\GitHub\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\CthulhuPlayerCard.pdb
-D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\NewCharacterPageFirstPart.g.cs
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\NewCharacterWindow.g.cs
-D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\NewCharacterPageFirstPart.baml
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\NewCharacterWindow.baml

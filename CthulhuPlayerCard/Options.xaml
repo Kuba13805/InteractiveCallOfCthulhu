@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuPlayerCard"
         mc:Ignorable="d"
-        Title="Options" Height="500" Width="400" Background="#FFD6DBDE">
+        Title="Options" Height="500" Width="400" Background="#FFD6DBDE" MinWidth="400" MaxWidth="400" MinHeight="500" MaxHeight="500">
     <Grid HorizontalAlignment="Left" Height="490" VerticalAlignment="Top" Width="400" Margin="0,0,-8,-21" MinWidth="400" MinHeight="490" MaxWidth="400" MaxHeight="490">
         <Grid Height="460" Margin="125,30,125,0" VerticalAlignment="Top">
             <Button x:Name="AddName" Content="Add Name" HorizontalAlignment="Left" Height="50" Margin="0,25,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="AddNameButton_Click"/>

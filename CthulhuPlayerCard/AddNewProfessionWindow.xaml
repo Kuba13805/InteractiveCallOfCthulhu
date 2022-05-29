@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuPlayerCard"
         mc:Ignorable="d"
-        Title="AddNewProfessionWindow" Height="500" Width="800" Loaded="Window_Loaded" Background="#FFD6DBDE">
+        Title="AddNewProfessionWindow" Height="500" Width="800" Loaded="Window_Loaded" Background="#FFD6DBDE" MinWidth="800" MinHeight="500" MaxWidth="800" MaxHeight="500">
     <Window.Resources>
         <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
         <CollectionViewSource x:Key="zawodyViewSource" Source="{Binding Zawody, Source={StaticResource projekt_CthulhuDataSet}}"/>
