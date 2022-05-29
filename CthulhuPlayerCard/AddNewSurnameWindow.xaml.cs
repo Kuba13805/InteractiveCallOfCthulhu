@@ -87,6 +87,21 @@ namespace CthulhuPlayerCard
             }
             return surnameInTable;        
         }
+        private bool SearchForCharacter(string surnameID)
+        {
+            bool characterWithSurnameInTable = false;
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            sqlConnection.Open();
+            string sql = "Select Id_postaci FROM CzyIstniejePostac WHERE Id_nazwiska = " + "'" + surnameID + "'" + ";";
+            SqlCommand sqlCommand = sqlConnection.CreateCommand();
+            sqlCommand.CommandText = sql;
+            int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());
+            if (searchResult >= 1)
+            {
+                characterWithSurnameInTable = true;
+            }
+            return characterWithSurnameInTable;
+        }
         private int RandomId()
         {
             Random roll = new Random();
@@ -144,6 +159,13 @@ namespace CthulhuPlayerCard
         {
             if (MessageBox.Show("Are you sure you want to delete this surname?", "Delete surname?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
+                bool canCharacterBeDeleted = SearchForCharacter(EnterID.Text);
+                if (canCharacterBeDeleted == true)
+                {
+                    MessageBox.Show("There is more than one character with this surname. You cannot delete this surname.", "Deleting not possible");
+                }
+                else
+                {
                 int IdToDelete;
                 SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
                 sqlConnection.Open();
@@ -154,7 +176,8 @@ namespace CthulhuPlayerCard
                 MessageBox.Show("Surname with id: " + EnterID.Text + " has been removed.", "Surname deleted!");
                 AddNewSurnameWindow Window = new AddNewSurnameWindow();
                 Window.Show();
-                Close();
+                Close();          
+                }
             }
         }
 

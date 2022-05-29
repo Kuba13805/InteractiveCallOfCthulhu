@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\jakub\Documents\GitHub\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\
+D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\
 CthulhuPlayerCard
 none
 false
 DEBUG;TRACE
-C:\Users\jakub\Documents\GitHub\InteractiveCallOfCthulhu\CthulhuPlayerCard\App.xaml
-10-1448732463
-2-1957146511
-25-175717864
-18-1652297237
+D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\App.xaml
+10838873495
+21750853300
+25-307632280
+18-122512274
 AddNewNameWindow.xaml;AddNewPersonalThingType.xaml;AddNewProfessionWindow.xaml;AddNewSurnameWindow.xaml;CharacterCard.xaml;LoadCharacterWindow.xaml;MainWindow.xaml;NewCharacterPageFirstPart.xaml;NewCharacterWindow.xaml;Options.xaml;
 
 True

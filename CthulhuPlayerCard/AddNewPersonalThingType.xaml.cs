@@ -23,5 +23,30 @@ namespace CthulhuPlayerCard
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddTypeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClearTexboxButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteTypeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

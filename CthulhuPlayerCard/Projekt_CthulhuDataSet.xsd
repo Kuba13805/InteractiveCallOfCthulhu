@@ -556,6 +556,40 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListaZawodowTableAdapter" GeneratorDataComponentClassName="ListaZawodowTableAdapter" Name="ListaZawodow" UserDataComponentName="ListaZawodowTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Projekt_CthulhuConnectionString (Settings)" DbObjectName="Projekt_Cthulhu.dbo.ListaZawodow" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id_zawodu, Nazwa_zawodu FROM dbo.ListaZawodow</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_zawodu" DataSetColumn="Id_zawodu" />
+              <Mapping SourceColumn="Nazwa_zawodu" DataSetColumn="Nazwa_zawodu" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListaTypowTableAdapter" GeneratorDataComponentClassName="ListaTypowTableAdapter" Name="ListaTypow" UserDataComponentName="ListaTypowTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Projekt_CthulhuConnectionString (Settings)" DbObjectName="Projekt_Cthulhu.dbo.ListaTypow" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id_typu, Nazwa_typu FROM dbo.ListaTypow</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id_typu" DataSetColumn="Id_typu" />
+              <Mapping SourceColumn="Nazwa_typu" DataSetColumn="Nazwa_typu" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -564,7 +598,7 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
   <xs:element name="Projekt_CthulhuDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Projekt_CthulhuDataSet" msprop:Generator_UserDSName="Projekt_CthulhuDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Imiona" msprop:Generator_TableClassName="ImionaDataTable" msprop:Generator_TableVarName="tableImiona" msprop:Generator_TablePropName="Imiona" msprop:Generator_RowDeletingName="ImionaRowDeleting" msprop:Generator_RowChangingName="ImionaRowChanging" msprop:Generator_RowEvHandlerName="ImionaRowChangeEventHandler" msprop:Generator_RowDeletedName="ImionaRowDeleted" msprop:Generator_UserTableName="Imiona" msprop:Generator_RowChangedName="ImionaRowChanged" msprop:Generator_RowEvArgName="ImionaRowChangeEvent" msprop:Generator_RowClassName="ImionaRow">
+        <xs:element name="Imiona" msprop:Generator_TableClassName="ImionaDataTable" msprop:Generator_TableVarName="tableImiona" msprop:Generator_RowChangedName="ImionaRowChanged" msprop:Generator_TablePropName="Imiona" msprop:Generator_RowDeletingName="ImionaRowDeleting" msprop:Generator_RowChangingName="ImionaRowChanging" msprop:Generator_RowEvHandlerName="ImionaRowChangeEventHandler" msprop:Generator_RowDeletedName="ImionaRowDeleted" msprop:Generator_RowClassName="ImionaRow" msprop:Generator_UserTableName="Imiona" msprop:Generator_RowEvArgName="ImionaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_imienia" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_imienia" msprop:Generator_ColumnPropNameInRow="Id_imienia" msprop:Generator_ColumnPropNameInTable="Id_imieniaColumn" msprop:Generator_UserColumnName="Id_imienia" type="xs:int" />
@@ -593,7 +627,7 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Nazwiska" msprop:Generator_TableClassName="NazwiskaDataTable" msprop:Generator_TableVarName="tableNazwiska" msprop:Generator_TablePropName="Nazwiska" msprop:Generator_RowDeletingName="NazwiskaRowDeleting" msprop:Generator_RowChangingName="NazwiskaRowChanging" msprop:Generator_RowEvHandlerName="NazwiskaRowChangeEventHandler" msprop:Generator_RowDeletedName="NazwiskaRowDeleted" msprop:Generator_UserTableName="Nazwiska" msprop:Generator_RowChangedName="NazwiskaRowChanged" msprop:Generator_RowEvArgName="NazwiskaRowChangeEvent" msprop:Generator_RowClassName="NazwiskaRow">
+        <xs:element name="Nazwiska" msprop:Generator_TableClassName="NazwiskaDataTable" msprop:Generator_TableVarName="tableNazwiska" msprop:Generator_RowChangedName="NazwiskaRowChanged" msprop:Generator_TablePropName="Nazwiska" msprop:Generator_RowDeletingName="NazwiskaRowDeleting" msprop:Generator_RowChangingName="NazwiskaRowChanging" msprop:Generator_RowEvHandlerName="NazwiskaRowChangeEventHandler" msprop:Generator_RowDeletedName="NazwiskaRowDeleted" msprop:Generator_RowClassName="NazwiskaRow" msprop:Generator_UserTableName="Nazwiska" msprop:Generator_RowEvArgName="NazwiskaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_nazwiska" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_nazwiska" msprop:Generator_ColumnPropNameInRow="Id_nazwiska" msprop:Generator_ColumnPropNameInTable="Id_nazwiskaColumn" msprop:Generator_UserColumnName="Id_nazwiska" type="xs:int" />
@@ -615,7 +649,7 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Rzeczy_osobiste" msprop:Generator_TableClassName="Rzeczy_osobisteDataTable" msprop:Generator_TableVarName="tableRzeczy_osobiste" msprop:Generator_TablePropName="Rzeczy_osobiste" msprop:Generator_RowDeletingName="Rzeczy_osobisteRowDeleting" msprop:Generator_RowChangingName="Rzeczy_osobisteRowChanging" msprop:Generator_RowEvHandlerName="Rzeczy_osobisteRowChangeEventHandler" msprop:Generator_RowDeletedName="Rzeczy_osobisteRowDeleted" msprop:Generator_UserTableName="Rzeczy_osobiste" msprop:Generator_RowChangedName="Rzeczy_osobisteRowChanged" msprop:Generator_RowEvArgName="Rzeczy_osobisteRowChangeEvent" msprop:Generator_RowClassName="Rzeczy_osobisteRow">
+        <xs:element name="Rzeczy_osobiste" msprop:Generator_TableClassName="Rzeczy_osobisteDataTable" msprop:Generator_TableVarName="tableRzeczy_osobiste" msprop:Generator_RowChangedName="Rzeczy_osobisteRowChanged" msprop:Generator_TablePropName="Rzeczy_osobiste" msprop:Generator_RowDeletingName="Rzeczy_osobisteRowDeleting" msprop:Generator_RowChangingName="Rzeczy_osobisteRowChanging" msprop:Generator_RowEvHandlerName="Rzeczy_osobisteRowChangeEventHandler" msprop:Generator_RowDeletedName="Rzeczy_osobisteRowDeleted" msprop:Generator_RowClassName="Rzeczy_osobisteRow" msprop:Generator_UserTableName="Rzeczy_osobiste" msprop:Generator_RowEvArgName="Rzeczy_osobisteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_przedmiotu" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_przedmiotu" msprop:Generator_ColumnPropNameInRow="Id_przedmiotu" msprop:Generator_ColumnPropNameInTable="Id_przedmiotuColumn" msprop:Generator_UserColumnName="Id_przedmiotu" type="xs:int" />
@@ -631,7 +665,7 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Spis_postaci" msprop:Generator_TableClassName="Spis_postaciDataTable" msprop:Generator_TableVarName="tableSpis_postaci" msprop:Generator_TablePropName="Spis_postaci" msprop:Generator_RowDeletingName="Spis_postaciRowDeleting" msprop:Generator_RowChangingName="Spis_postaciRowChanging" msprop:Generator_RowEvHandlerName="Spis_postaciRowChangeEventHandler" msprop:Generator_RowDeletedName="Spis_postaciRowDeleted" msprop:Generator_UserTableName="Spis_postaci" msprop:Generator_RowChangedName="Spis_postaciRowChanged" msprop:Generator_RowEvArgName="Spis_postaciRowChangeEvent" msprop:Generator_RowClassName="Spis_postaciRow">
+        <xs:element name="Spis_postaci" msprop:Generator_TableClassName="Spis_postaciDataTable" msprop:Generator_TableVarName="tableSpis_postaci" msprop:Generator_RowChangedName="Spis_postaciRowChanged" msprop:Generator_TablePropName="Spis_postaci" msprop:Generator_RowDeletingName="Spis_postaciRowDeleting" msprop:Generator_RowChangingName="Spis_postaciRowChanging" msprop:Generator_RowEvHandlerName="Spis_postaciRowChangeEventHandler" msprop:Generator_RowDeletedName="Spis_postaciRowDeleted" msprop:Generator_RowClassName="Spis_postaciRow" msprop:Generator_UserTableName="Spis_postaci" msprop:Generator_RowEvArgName="Spis_postaciRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_postaci" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_postaci" msprop:Generator_ColumnPropNameInRow="Id_postaci" msprop:Generator_ColumnPropNameInTable="Id_postaciColumn" msprop:Generator_UserColumnName="Id_postaci" type="xs:int" />
@@ -679,7 +713,7 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Typy_przedmiotów" msprop:Generator_TableClassName="Typy_przedmiotówDataTable" msprop:Generator_TableVarName="tableTypy_przedmiotów" msprop:Generator_TablePropName="Typy_przedmiotów" msprop:Generator_RowDeletingName="Typy_przedmiotówRowDeleting" msprop:Generator_RowChangingName="Typy_przedmiotówRowChanging" msprop:Generator_RowEvHandlerName="Typy_przedmiotówRowChangeEventHandler" msprop:Generator_RowDeletedName="Typy_przedmiotówRowDeleted" msprop:Generator_UserTableName="Typy_przedmiotów" msprop:Generator_RowChangedName="Typy_przedmiotówRowChanged" msprop:Generator_RowEvArgName="Typy_przedmiotówRowChangeEvent" msprop:Generator_RowClassName="Typy_przedmiotówRow">
+        <xs:element name="Typy_przedmiotów" msprop:Generator_TableClassName="Typy_przedmiotówDataTable" msprop:Generator_TableVarName="tableTypy_przedmiotów" msprop:Generator_RowChangedName="Typy_przedmiotówRowChanged" msprop:Generator_TablePropName="Typy_przedmiotów" msprop:Generator_RowDeletingName="Typy_przedmiotówRowDeleting" msprop:Generator_RowChangingName="Typy_przedmiotówRowChanging" msprop:Generator_RowEvHandlerName="Typy_przedmiotówRowChangeEventHandler" msprop:Generator_RowDeletedName="Typy_przedmiotówRowDeleted" msprop:Generator_RowClassName="Typy_przedmiotówRow" msprop:Generator_UserTableName="Typy_przedmiotów" msprop:Generator_RowEvArgName="Typy_przedmiotówRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_typu" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_typu" msprop:Generator_ColumnPropNameInRow="Id_typu" msprop:Generator_ColumnPropNameInTable="Id_typuColumn" msprop:Generator_UserColumnName="Id_typu" type="xs:short" />
@@ -694,7 +728,7 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Zawody" msprop:Generator_TableClassName="ZawodyDataTable" msprop:Generator_TableVarName="tableZawody" msprop:Generator_TablePropName="Zawody" msprop:Generator_RowDeletingName="ZawodyRowDeleting" msprop:Generator_RowChangingName="ZawodyRowChanging" msprop:Generator_RowEvHandlerName="ZawodyRowChangeEventHandler" msprop:Generator_RowDeletedName="ZawodyRowDeleted" msprop:Generator_UserTableName="Zawody" msprop:Generator_RowChangedName="ZawodyRowChanged" msprop:Generator_RowEvArgName="ZawodyRowChangeEvent" msprop:Generator_RowClassName="ZawodyRow">
+        <xs:element name="Zawody" msprop:Generator_TableClassName="ZawodyDataTable" msprop:Generator_TableVarName="tableZawody" msprop:Generator_RowChangedName="ZawodyRowChanged" msprop:Generator_TablePropName="Zawody" msprop:Generator_RowDeletingName="ZawodyRowDeleting" msprop:Generator_RowChangingName="ZawodyRowChanging" msprop:Generator_RowEvHandlerName="ZawodyRowChangeEventHandler" msprop:Generator_RowDeletedName="ZawodyRowDeleted" msprop:Generator_RowClassName="ZawodyRow" msprop:Generator_UserTableName="Zawody" msprop:Generator_RowEvArgName="ZawodyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_zawodu" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId_zawodu" msprop:Generator_ColumnPropNameInRow="Id_zawodu" msprop:Generator_ColumnPropNameInTable="Id_zawoduColumn" msprop:Generator_UserColumnName="Id_zawodu" type="xs:int" />
@@ -744,7 +778,7 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ListaPostaci" msprop:Generator_TableClassName="ListaPostaciDataTable" msprop:Generator_TableVarName="tableListaPostaci" msprop:Generator_RowChangedName="ListaPostaciRowChanged" msprop:Generator_TablePropName="ListaPostaci" msprop:Generator_RowDeletingName="ListaPostaciRowDeleting" msprop:Generator_RowChangingName="ListaPostaciRowChanging" msprop:Generator_RowEvHandlerName="ListaPostaciRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaPostaciRowDeleted" msprop:Generator_RowClassName="ListaPostaciRow" msprop:Generator_UserTableName="ListaPostaci" msprop:Generator_RowEvArgName="ListaPostaciRowChangeEvent">
+        <xs:element name="ListaPostaci" msprop:Generator_TableClassName="ListaPostaciDataTable" msprop:Generator_TableVarName="tableListaPostaci" msprop:Generator_TablePropName="ListaPostaci" msprop:Generator_RowDeletingName="ListaPostaciRowDeleting" msprop:Generator_RowChangingName="ListaPostaciRowChanging" msprop:Generator_RowEvHandlerName="ListaPostaciRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaPostaciRowDeleted" msprop:Generator_UserTableName="ListaPostaci" msprop:Generator_RowChangedName="ListaPostaciRowChanged" msprop:Generator_RowEvArgName="ListaPostaciRowChangeEvent" msprop:Generator_RowClassName="ListaPostaciRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_postaci" msprop:Generator_ColumnVarNameInTable="columnId_postaci" msprop:Generator_ColumnPropNameInRow="Id_postaci" msprop:Generator_ColumnPropNameInTable="Id_postaciColumn" msprop:Generator_UserColumnName="Id_postaci" type="xs:int" />
@@ -772,7 +806,7 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ListaPrzedmiotow" msprop:Generator_TableClassName="ListaPrzedmiotowDataTable" msprop:Generator_TableVarName="tableListaPrzedmiotow" msprop:Generator_TablePropName="ListaPrzedmiotow" msprop:Generator_RowDeletingName="ListaPrzedmiotowRowDeleting" msprop:Generator_RowChangingName="ListaPrzedmiotowRowChanging" msprop:Generator_RowEvHandlerName="ListaPrzedmiotowRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaPrzedmiotowRowDeleted" msprop:Generator_UserTableName="ListaPrzedmiotow" msprop:Generator_RowChangedName="ListaPrzedmiotowRowChanged" msprop:Generator_RowEvArgName="ListaPrzedmiotowRowChangeEvent" msprop:Generator_RowClassName="ListaPrzedmiotowRow">
+        <xs:element name="ListaPrzedmiotow" msprop:Generator_TableClassName="ListaPrzedmiotowDataTable" msprop:Generator_TableVarName="tableListaPrzedmiotow" msprop:Generator_RowChangedName="ListaPrzedmiotowRowChanged" msprop:Generator_TablePropName="ListaPrzedmiotow" msprop:Generator_RowDeletingName="ListaPrzedmiotowRowDeleting" msprop:Generator_RowChangingName="ListaPrzedmiotowRowChanging" msprop:Generator_RowEvHandlerName="ListaPrzedmiotowRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaPrzedmiotowRowDeleted" msprop:Generator_RowClassName="ListaPrzedmiotowRow" msprop:Generator_UserTableName="ListaPrzedmiotow" msprop:Generator_RowEvArgName="ListaPrzedmiotowRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_postaci" msprop:Generator_ColumnVarNameInTable="columnId_postaci" msprop:Generator_ColumnPropNameInRow="Id_postaci" msprop:Generator_ColumnPropNameInTable="Id_postaciColumn" msprop:Generator_UserColumnName="Id_postaci">
@@ -786,6 +820,46 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwa_typu" msprop:Generator_ColumnVarNameInTable="columnNazwa_typu" msprop:Generator_ColumnPropNameInRow="Nazwa_typu" msprop:Generator_ColumnPropNameInTable="Nazwa_typuColumn" msprop:Generator_UserColumnName="Nazwa_typu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ListaZawodow" msprop:Generator_TableClassName="ListaZawodowDataTable" msprop:Generator_TableVarName="tableListaZawodow" msprop:Generator_TablePropName="ListaZawodow" msprop:Generator_RowDeletingName="ListaZawodowRowDeleting" msprop:Generator_RowChangingName="ListaZawodowRowChanging" msprop:Generator_RowEvHandlerName="ListaZawodowRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaZawodowRowDeleted" msprop:Generator_UserTableName="ListaZawodow" msprop:Generator_RowChangedName="ListaZawodowRowChanged" msprop:Generator_RowEvArgName="ListaZawodowRowChangeEvent" msprop:Generator_RowClassName="ListaZawodowRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_zawodu" msprop:Generator_ColumnVarNameInTable="columnId_zawodu" msprop:Generator_ColumnPropNameInRow="Id_zawodu" msprop:Generator_ColumnPropNameInTable="Id_zawoduColumn" msprop:Generator_UserColumnName="Id_zawodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwa_zawodu" msprop:Generator_ColumnVarNameInTable="columnNazwa_zawodu" msprop:Generator_ColumnPropNameInRow="Nazwa_zawodu" msprop:Generator_ColumnPropNameInTable="Nazwa_zawoduColumn" msprop:Generator_UserColumnName="Nazwa_zawodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ListaTypow" msprop:Generator_TableClassName="ListaTypowDataTable" msprop:Generator_TableVarName="tableListaTypow" msprop:Generator_TablePropName="ListaTypow" msprop:Generator_RowDeletingName="ListaTypowRowDeleting" msprop:Generator_RowChangingName="ListaTypowRowChanging" msprop:Generator_RowEvHandlerName="ListaTypowRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaTypowRowDeleted" msprop:Generator_UserTableName="ListaTypow" msprop:Generator_RowChangedName="ListaTypowRowChanged" msprop:Generator_RowEvArgName="ListaTypowRowChangeEvent" msprop:Generator_RowClassName="ListaTypowRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_typu" msprop:Generator_ColumnVarNameInTable="columnId_typu" msprop:Generator_ColumnPropNameInRow="Id_typu" msprop:Generator_ColumnPropNameInTable="Id_typuColumn" msprop:Generator_UserColumnName="Id_typu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -856,11 +930,11 @@ SELECT Id_zawodu, Nazwa_zawodu, Zwiazana_Historia, Zwiazana_Bijatyka, Zwiazana_S
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="relacja5" msdata:parent="Typy_przedmiotów" msdata:child="Rzeczy_osobiste" msdata:parentkey="Id_typu" msdata:childkey="Id_typu" msprop:Generator_UserChildTable="Rzeczy_osobiste" msprop:Generator_ChildPropName="GetRzeczy_osobisteRows" msprop:Generator_UserRelationName="relacja5" msprop:Generator_RelationVarName="relationrelacja5" msprop:Generator_UserParentTable="Typy_przedmiotów" msprop:Generator_ParentPropName="Typy_przedmiotówRow" />
-      <msdata:Relationship name="relacja1" msdata:parent="Zawody" msdata:child="Spis_postaci" msdata:parentkey="Id_zawodu" msdata:childkey="Id_zawodu" msprop:Generator_UserChildTable="Spis_postaci" msprop:Generator_ChildPropName="GetSpis_postaciRows" msprop:Generator_UserRelationName="relacja1" msprop:Generator_RelationVarName="relationrelacja1" msprop:Generator_UserParentTable="Zawody" msprop:Generator_ParentPropName="ZawodyRow" />
-      <msdata:Relationship name="relacja2" msdata:parent="Imiona" msdata:child="Spis_postaci" msdata:parentkey="Id_imienia" msdata:childkey="Id_imienia" msprop:Generator_UserChildTable="Spis_postaci" msprop:Generator_ChildPropName="GetSpis_postaciRows" msprop:Generator_UserRelationName="relacja2" msprop:Generator_ParentPropName="ImionaRow" msprop:Generator_RelationVarName="relationrelacja2" msprop:Generator_UserParentTable="Imiona" />
-      <msdata:Relationship name="relacja3" msdata:parent="Nazwiska" msdata:child="Spis_postaci" msdata:parentkey="Id_nazwiska" msdata:childkey="Id_nazwiska" msprop:Generator_UserChildTable="Spis_postaci" msprop:Generator_ChildPropName="GetSpis_postaciRows" msprop:Generator_UserRelationName="relacja3" msprop:Generator_ParentPropName="NazwiskaRow" msprop:Generator_RelationVarName="relationrelacja3" msprop:Generator_UserParentTable="Nazwiska" />
-      <msdata:Relationship name="relacja4" msdata:parent="Rzeczy_osobiste" msdata:child="Spis_postaci" msdata:parentkey="Id_przedmiotu" msdata:childkey="Id_przedmiotu" msprop:Generator_UserChildTable="Spis_postaci" msprop:Generator_ChildPropName="GetSpis_postaciRows" msprop:Generator_UserRelationName="relacja4" msprop:Generator_ParentPropName="Rzeczy_osobisteRow" msprop:Generator_RelationVarName="relationrelacja4" msprop:Generator_UserParentTable="Rzeczy_osobiste" />
+      <msdata:Relationship name="relacja5" msdata:parent="Typy_przedmiotów" msdata:child="Rzeczy_osobiste" msdata:parentkey="Id_typu" msdata:childkey="Id_typu" msprop:Generator_UserChildTable="Rzeczy_osobiste" msprop:Generator_ChildPropName="GetRzeczy_osobisteRows" msprop:Generator_UserRelationName="relacja5" msprop:Generator_ParentPropName="Typy_przedmiotówRow" msprop:Generator_RelationVarName="relationrelacja5" msprop:Generator_UserParentTable="Typy_przedmiotów" />
+      <msdata:Relationship name="relacja1" msdata:parent="Zawody" msdata:child="Spis_postaci" msdata:parentkey="Id_zawodu" msdata:childkey="Id_zawodu" msprop:Generator_UserChildTable="Spis_postaci" msprop:Generator_ChildPropName="GetSpis_postaciRows" msprop:Generator_UserRelationName="relacja1" msprop:Generator_ParentPropName="ZawodyRow" msprop:Generator_RelationVarName="relationrelacja1" msprop:Generator_UserParentTable="Zawody" />
+      <msdata:Relationship name="relacja2" msdata:parent="Imiona" msdata:child="Spis_postaci" msdata:parentkey="Id_imienia" msdata:childkey="Id_imienia" msprop:Generator_UserChildTable="Spis_postaci" msprop:Generator_ChildPropName="GetSpis_postaciRows" msprop:Generator_UserRelationName="relacja2" msprop:Generator_RelationVarName="relationrelacja2" msprop:Generator_UserParentTable="Imiona" msprop:Generator_ParentPropName="ImionaRow" />
+      <msdata:Relationship name="relacja3" msdata:parent="Nazwiska" msdata:child="Spis_postaci" msdata:parentkey="Id_nazwiska" msdata:childkey="Id_nazwiska" msprop:Generator_UserChildTable="Spis_postaci" msprop:Generator_ChildPropName="GetSpis_postaciRows" msprop:Generator_UserRelationName="relacja3" msprop:Generator_RelationVarName="relationrelacja3" msprop:Generator_UserParentTable="Nazwiska" msprop:Generator_ParentPropName="NazwiskaRow" />
+      <msdata:Relationship name="relacja4" msdata:parent="Rzeczy_osobiste" msdata:child="Spis_postaci" msdata:parentkey="Id_przedmiotu" msdata:childkey="Id_przedmiotu" msprop:Generator_UserChildTable="Spis_postaci" msprop:Generator_ChildPropName="GetSpis_postaciRows" msprop:Generator_UserRelationName="relacja4" msprop:Generator_RelationVarName="relationrelacja4" msprop:Generator_UserParentTable="Rzeczy_osobiste" msprop:Generator_ParentPropName="Rzeczy_osobisteRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
