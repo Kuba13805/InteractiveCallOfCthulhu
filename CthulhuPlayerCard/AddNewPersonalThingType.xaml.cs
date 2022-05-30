@@ -177,7 +177,6 @@ namespace CthulhuPlayerCard
                 }
             }
         }
-
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
             Options Window = new Options();
