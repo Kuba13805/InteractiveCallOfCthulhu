@@ -8,9 +8,9 @@
         Title="QuickSurnameAdding" Height="180" Width="260" MinWidth="260" MinHeight="180" MaxWidth="260" MaxHeight="180" Background="#FFD6DBDE">
     <Grid>
         <Grid>
-            <TextBox x:Name="EnterNewSurname" Height="20" Margin="90,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell"/>
+            <TextBox x:Name="EnterSurname" Height="20" Margin="90,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="5,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontFamily="Rockwell" FontSize="11"><Run Text="Enter "/><Run Text="sur"/><Run Text="name"/><Run Text=":"/></TextBlock>
-            <TextBox x:Name="EnterNameOrigin" Height="20" Margin="109,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" HorizontalAlignment="Left" Width="133"/>
+            <TextBox x:Name="EnterSurnameOrigin" Height="20" Margin="109,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" HorizontalAlignment="Left" Width="133"/>
             <TextBlock HorizontalAlignment="Left" Height="20" Margin="5,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" FontFamily="Rockwell" FontSize="10.3"><Run Text="Enter "/><Run Text="sur"/><Run Text="name origin"/><Run Text=":"/></TextBlock>
             <Button x:Name="AcceptButton" Content="Accept" Height="20" Margin="86,119,86,0" VerticalAlignment="Top" Background="#FF2C374F" BorderBrush="Black" FontFamily="Rockwell" Click="AcceptButton_Click" FontSize="14" Foreground="#FFD7DADF"/>
 
