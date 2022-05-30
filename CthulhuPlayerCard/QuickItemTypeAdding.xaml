@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CthulhuPlayerCard"
         mc:Ignorable="d"
-        Title="QuickItemTypeAdding" Height="450" Width="800">
+        Title="QuickItemTypeAdding" Height="180" Width="260" MinWidth="260" MinHeight="180" MaxWidth="260" MaxHeight="180" Background="#FFD6DBDE">
     <Grid>
-        
+        <TextBox x:Name="EnterType" Height="20" Margin="95,50,5,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontFamily="Rockwell"><Run Text="Enter "/><Run Text="type"/><Run Text=":"/></TextBlock>
+        <Button x:Name="AcceptButton" Content="Accept" Height="20" Margin="86,119,86,0" VerticalAlignment="Top" Background="#FF2C374F" BorderBrush="Black" FontFamily="Rockwell" Click="AcceptButton_Click" FontSize="14" Foreground="#FFD7DADF"/>
+
     </Grid>
 </Window>

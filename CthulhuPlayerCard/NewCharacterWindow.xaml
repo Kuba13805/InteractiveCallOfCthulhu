@@ -21,8 +21,8 @@
                         <ColumnDefinition Width="268*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock x:Name="NameLabel" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="40" FontFamily="Rockwell" Margin="0,5,0,0"/>
-                    <TextBox x:Name="EnterName" HorizontalAlignment="Left" Height="20" Margin="40,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Background="White" BorderBrush="#FFABADB3" FontFamily="Rockwell" TextAlignment="Center" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="EnterSurname" HorizontalAlignment="Left" Height="20" Margin="163.5,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Background="White" BorderBrush="#FFABADB3" FontFamily="Rockwell" TextAlignment="Center" Grid.Column="1"/>
+                    <TextBox x:Name="EnterName" HorizontalAlignment="Left" Height="20" Margin="40,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Background="White" BorderBrush="#FFABADB3" FontFamily="Rockwell" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="EnterSurname" HorizontalAlignment="Left" Height="20" Margin="163.5,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Background="White" BorderBrush="#FFABADB3" FontFamily="Rockwell" Grid.Column="1"/>
                     <TextBlock x:Name="NameLabel_Copy" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Surname:" VerticalAlignment="Top" Width="53" FontFamily="Rockwell" Margin="105.5,5,0,0" Grid.Column="1"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="25" Margin="0,55,0,0" VerticalAlignment="Top" Width="324">
@@ -272,7 +272,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="TypeLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Width="260" FontFamily="Rockwell" Foreground="#FF2C374F" Height="16" VerticalAlignment="Top" TextAlignment="Center" FontSize="13" Margin="0,10,0,0"><Run Text="Type"/><Run Text=":"/></TextBlock>
-                    <TextBox x:Name="EnterType" Margin="0,10,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" TextAlignment="Center" HorizontalAlignment="Left" Width="260" Height="25" VerticalAlignment="Top" Grid.Row="1" Background="White"/>
+                    <TextBox x:Name="EnterType" Margin="0,10,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" HorizontalAlignment="Left" Width="260" Height="25" VerticalAlignment="Top" Grid.Row="1" Background="White" TextAlignment="Center"/>
                 </Grid>
                 <Grid x:Name="SkillGrid_Copy7" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="260" Margin="0,80,0,0">
                     <Grid.ColumnDefinitions>
@@ -284,7 +284,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="NameLabel1" HorizontalAlignment="Left" TextWrapping="Wrap" Width="260" FontFamily="Rockwell" Foreground="#FF2C374F" Height="16" VerticalAlignment="Top" TextAlignment="Center" FontSize="13" Margin="0,10,0,0" Grid.ColumnSpan="2"><Run Text="Name"/><Run Text=":"/></TextBlock>
-                    <TextBox x:Name="EnterItemName" Margin="0,10,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" TextAlignment="Center" HorizontalAlignment="Left" Width="260" Height="25" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="EnterItemName" Margin="0,10,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" HorizontalAlignment="Left" Width="260" Height="25" VerticalAlignment="Top" Grid.Row="1" Grid.ColumnSpan="2" TextAlignment="Center"/>
                 </Grid>
             </Grid>
         </Grid>
