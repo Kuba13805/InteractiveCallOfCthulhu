@@ -107,6 +107,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Projekt_CthulhuDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QuickItemTypeAdding.xaml.cs">
+      <DependentUpon>QuickItemTypeAdding.xaml</DependentUpon>
+    </Compile>
     <Compile Include="QuickNameAdding.xaml.cs">
       <DependentUpon>QuickNameAdding.xaml</DependentUpon>
     </Compile>
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuickItemTypeAdding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

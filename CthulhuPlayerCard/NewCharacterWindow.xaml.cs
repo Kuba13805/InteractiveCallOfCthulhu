@@ -24,13 +24,13 @@ namespace CthulhuPlayerCard
         public NewCharacterWindow()
         {
             InitializeComponent();
-        }
-        private void CheckForNameInTable(TextBox nameTextBox)
+        } 
+        private void CheckForNameInTable(string nameTextBox)
         {
             int nameToSearch;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "Select Id_postaci FROM ListaPostaci WHERE Imie = " + nameTextBox.Text + ";";
+            string sql = "Select Id_postaci FROM ListaPostaci WHERE Imie = " + "'" + nameTextBox +  "';";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             nameToSearch = Convert.ToInt32(sqlCommand.ExecuteScalar());
@@ -43,12 +43,12 @@ namespace CthulhuPlayerCard
                 }
             }
         }
-        private void CheckForSurnameInTable(TextBox surnameTextBox)
+        private void CheckForSurnameInTable(string surnameTextBox)
         {
             int surnameToSearch;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "Select Id_postaci FROM ListaPostaci WHERE Nazwisko = " + surnameTextBox.Text + ";";
+            string sql = "Select Id_postaci FROM ListaPostaci WHERE Nazwisko = '" + surnameTextBox + "';";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             surnameToSearch = Convert.ToInt32(sqlCommand.ExecuteScalar());
@@ -61,12 +61,12 @@ namespace CthulhuPlayerCard
                 }
             }
         }
-        private void CheckForItemTypeInTable(TextBox typeTextBox)
+        private void CheckForItemTypeInTable(string typeTextBox)
         {
             int typeToSearch;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "Select Id_typu FROM ListaTypow WHERE Nazwa_typu = " + typeTextBox.Text + ";";
+            string sql = "Select Id_typu FROM ListaTypow WHERE Nazwa_typu = '" + typeTextBox + "';";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             typeToSearch = Convert.ToInt32(sqlCommand.ExecuteScalar());
@@ -74,7 +74,7 @@ namespace CthulhuPlayerCard
             {
                 if (MessageBox.Show("Given type was not found in types list. Do you want to add this type?", "Type not found", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
-                    QuickSurnameAdding Window = new QuickSurnameAdding();
+                    QuickItemTypeAdding Window = new QuickItemTypeAdding();
                     Window.Show();
                 }
             }
@@ -84,6 +84,13 @@ namespace CthulhuPlayerCard
             MainWindow Window = new MainWindow();
             Window.Show();
             Close();
+        }
+
+        private void CreateCharacterButton_Click(object sender, RoutedEventArgs e)
+        {
+            CheckForNameInTable(EnterName.Text);
+            CheckForSurnameInTable(EnterSurname.Text);
+            CheckForItemTypeInTable(EnterType.Text);
         }
     }
 }

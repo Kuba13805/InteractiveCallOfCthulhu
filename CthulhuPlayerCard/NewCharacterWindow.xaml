@@ -8,7 +8,7 @@
         Title="NewCharacterWindow" Height="560" Width="1000" Background="#FFD6DBDE" MinWidth="1000" MinHeight="560" MaxWidth="1000" MaxHeight="560">
     <Grid Margin="0,0,0,-21">
         <Grid Height="60" Margin="0,470,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="990">
-            <Button x:Name="CreateCharacterButton" Content="Create" Height="30" Margin="15,10,10,0" VerticalAlignment="Top" Background="#FF2C374F" BorderBrush="Black" FontFamily="Rockwell" FontSize="14" HorizontalAlignment="Right" Width="80" Foreground="#FFD7DADF"/>
+            <Button x:Name="CreateCharacterButton" Content="Create" Height="30" Margin="15,10,10,0" VerticalAlignment="Top" Background="#FF2C374F" BorderBrush="Black" FontFamily="Rockwell" FontSize="14" HorizontalAlignment="Right" Width="80" Foreground="#FFD7DADF" Click="CreateCharacterButton_Click"/>
             <Button x:Name="RandomCharacterButton" Content="Random" Height="30" Margin="346,10,346,0" VerticalAlignment="Top" Background="#FF2C374F" BorderBrush="Black" FontFamily="Rockwell" FontSize="14" Foreground="#FFD7DADF"/>
             <Button x:Name="BackButton" Content="Back" Height="30" Margin="15,10,0,0" VerticalAlignment="Top" Background="#FF2C374F" BorderBrush="Black" FontFamily="Rockwell" Click="BackButton_Click" FontSize="14" HorizontalAlignment="Left" Width="80" Foreground="#FFD7DADF"/>
         </Grid>

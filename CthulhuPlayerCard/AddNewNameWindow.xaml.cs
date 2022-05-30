@@ -87,18 +87,18 @@ namespace CthulhuPlayerCard
             }
             return nameSexChecked;
         }
-        private bool SearchForName(string nameSex, string origin)
+        private bool SearchForName(string name, string nameSex, string origin)
         {
             bool nameInTable = true;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "Select * FROM Imiona WHERE Pochodzenie_imienia = " + "'" + origin + "'" +" AND Plec_imienia = " +"'" + nameSex +"'" + ";";
+            string sql = "Select * FROM Imiona WHERE Pochodzenie_imienia = " + "'" + origin + "'" +" AND Plec_imienia = " +"'" + nameSex +"'" + " AND Imie = " + "'" + name + "'" + ";";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());
             if (searchResult > 1)
             {
-                MessageBox.Show("Name with the same origin and sex is already in table." + searchResult, "Name already in table!");
+                MessageBox.Show("Name with the same origin and sex is already in table.", "Name already in table!");
                 nameInTable = false;
             }
             return nameInTable;
@@ -140,7 +140,7 @@ namespace CthulhuPlayerCard
             bool checkNameSpelling = CheckSpelling(EnterNewName.Text, "Enter name");
             bool checkOriginSpelling = CheckSpelling(EnterNameOrigin.Text, "Enter name origin");
             bool checkMaleFemaleName = CheckNameSex();
-            bool checkIfNameIsInTable = SearchForName(EnterNameSex.Text, EnterNameOrigin.Text);
+            bool checkIfNameIsInTable = SearchForName(EnterNewName.Text, EnterNameSex.Text, EnterNameOrigin.Text);
             if (checkNameSpelling == true && checkOriginSpelling == true && checkMaleFemaleName == true && checkIfNameIsInTable == true)
             {
                 string nameToInput = UpdateWord(EnterNewName.Text);

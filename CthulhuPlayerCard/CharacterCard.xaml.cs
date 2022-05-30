@@ -339,23 +339,23 @@ namespace CthulhuPlayerCard
         {
             int build = 0;
             int strSizAddition = strenght + size;
-            if (strSizAddition > 2 && strSizAddition < 64)
+            if (strSizAddition >= 2 && strSizAddition <= 64)
             {
                 build = -2;
             }
-            else if (strSizAddition > 65 && strSizAddition < 84)
+            else if (strSizAddition >= 65 && strSizAddition <= 84)
             {
                 build = -1;
             }
-            else if (strSizAddition > 85 && strSizAddition < 124)
+            else if (strSizAddition >= 85 && strSizAddition <= 124)
             {
                 build = 0;
             }
-            else if (strSizAddition > 125 && strSizAddition < 164)
+            else if (strSizAddition >= 125 && strSizAddition <= 164)
             {
                 build = 1;
             }
-            else if (strSizAddition > 165 && strSizAddition < 204)
+            else if (strSizAddition >= 165 && strSizAddition <= 204)
             {
                 build = 2;
             }
