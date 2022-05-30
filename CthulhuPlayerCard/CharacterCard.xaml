@@ -48,7 +48,7 @@
                 <Grid HorizontalAlignment="Left" Height="1" Margin="0,15,0,0" VerticalAlignment="Top" Width="64" Background="#FF2C374F"/>
             </Grid>
         </Grid>
-        <Grid x:Name="Attributes" HorizontalAlignment="Left" Height="200" Margin="500,20,0,0" VerticalAlignment="Top" Width="445">
+        <Grid x:Name="Attributes" HorizontalAlignment="Left" Height="200" Margin="500,20,0,0" VerticalAlignment="Top" Width="445" d:IsLocked="True">
             <Label Content="Attributes" Height="25" Margin="185,0" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="14" Foreground="#FF2C374F"/>
             <Grid HorizontalAlignment="Left" Height="25" Margin="1,0,0,0" VerticalAlignment="Top" Width="184">
                 <Grid HorizontalAlignment="Left" Height="2" Margin="0,12,0,0" VerticalAlignment="Top" Width="184" Background="#FF2C374F"/>
@@ -151,7 +151,7 @@
                 </Grid>
             </Grid>
         </Grid>
-        <Grid x:Name="AttributesAdditional" HorizontalAlignment="Left" Height="200" Margin="980,20,0,0" VerticalAlignment="Top" Width="244">
+        <Grid x:Name="AttributesAdditional" HorizontalAlignment="Left" Height="200" Margin="980,20,0,0" VerticalAlignment="Top" Width="244" d:IsLocked="True">
             <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="120" Margin="-1,25,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -366,6 +366,6 @@
                 </Grid>
             </Grid>
         </Grid>
-        <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Height="50" Margin="20,750,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="BackButton_Click" d:IsLocked="True"/>
+        <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="20,750,0,0" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="BackButton_Click" Height="50" VerticalAlignment="Top"/>
     </Grid>
 </Window>
