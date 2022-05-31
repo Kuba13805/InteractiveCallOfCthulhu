@@ -1,0 +1,1 @@
+Create Database Projekt_Cthulhu;

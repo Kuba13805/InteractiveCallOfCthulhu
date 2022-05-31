@@ -98,6 +98,56 @@ namespace CthulhuPlayerCard
             }
             return result;
         }
+        private void CreateDB()
+        {
+            bool successfullConnection = true;
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Trusted_Connection=Yes;");
+            string script = File.ReadAllText(@"\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\CreateOnlyDB.sql");
+            SqlCommand createDatabaseCommand = new SqlCommand(script, sqlConnection);
+            try
+            {
+                sqlConnection.Open();
+                createDatabaseCommand.ExecuteNonQuery();
+                MessageBox.Show("DataBase is created successfully", "Database created!");
+            }
+            catch (System.Exception ex)
+            {
+                successfullConnection = false;
+                MessageBox.Show(ex.ToString(), "Database creation");
+            }
+            finally
+            {
+                if (successfullConnection == true)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
+        private void InsertIntoTables()
+        {
+            bool successfullConnection = true;
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            string script = File.ReadAllText(@"\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\InsertIntoTables.sql");
+            SqlCommand createDatabaseCommand = new SqlCommand(script, sqlConnection);
+            try
+            {
+                sqlConnection.Open();
+                createDatabaseCommand.ExecuteNonQuery();
+                MessageBox.Show("Data inserted into tables", "Data inserted");
+            }
+            catch (System.Exception ex)
+            {
+                successfullConnection = false;
+                MessageBox.Show(ex.ToString(), "Data inserted");
+            }
+            finally
+            {
+                if (successfullConnection == true)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
         private void CreateViews()
         {
             bool viewsCreated = true;
@@ -141,22 +191,22 @@ namespace CthulhuPlayerCard
                 }
             }
         }
-        private void CreateDB()
+        private void CreateTables()
         {
             bool successfullConnection = true;
-            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Trusted_Connection=Yes;");
+            SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             string script = File.ReadAllText(@"\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\DatabaseCreation.sql");
             SqlCommand createDatabaseCommand = new SqlCommand(script, sqlConnection);
             try
             {
                 sqlConnection.Open();
                 createDatabaseCommand.ExecuteNonQuery();
-                MessageBox.Show("DataBase is created successfully", "Database created!");
+                MessageBox.Show("Tables are created successfully", "Tables created!");
             }
             catch (System.Exception ex)
             {
                 successfullConnection = false;
-                MessageBox.Show(ex.ToString(), "Database creation");
+                MessageBox.Show(ex.ToString(), "Tables creation");
             }
             finally
             {
@@ -165,13 +215,14 @@ namespace CthulhuPlayerCard
                     sqlConnection.Close();
                 }
             }
-
         }
         private void CreateDBConnectButton_Click(object sender, RoutedEventArgs e)
         {
             if (DBConnectionSet == false)
             {
                 CreateDB();
+                CreateTables();
+                InsertIntoTables();
                 CreateViews();
                 MessageBox.Show("Database was created", "Database creation");
             }
