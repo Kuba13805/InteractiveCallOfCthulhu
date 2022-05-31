@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace CthulhuPlayerCard
 {
@@ -20,9 +22,25 @@ namespace CthulhuPlayerCard
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool _DBConnectionSet;
+        bool DBConnectionSet
+        {
+            get => _DBConnectionSet = CheckForDBConnection();
+        }
         public MainWindow()
         {
             InitializeComponent();
+            if (DBConnectionSet == false)
+            {
+                NewCharacterButton.IsEnabled = false;
+                LoadCharacterButton.IsEnabled = false;
+            }
+            else
+            {
+                NewCharacterButton.IsEnabled = true;
+                LoadCharacterButton.IsEnabled = true;
+            }
+
 
         }
 
@@ -50,6 +68,23 @@ namespace CthulhuPlayerCard
             NewCharacterWindow NewCharacterWindow = new NewCharacterWindow();
             NewCharacterWindow.Show();
             Close();
+        }
+        private bool CheckForDBConnection()
+        {
+            SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+            bool result = true;
+
+            try
+            {
+                conn.Open();
+                conn.Close();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Connection with database cannot be opened!", "Wrong Database");
+                result = false;
+            }
+            return result;
         }
     }
 }

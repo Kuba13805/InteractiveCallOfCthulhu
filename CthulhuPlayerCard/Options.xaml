@@ -13,7 +13,8 @@
             <Button x:Name="AddProfession" Content="Add Profession" Height="50" Margin="0,175,0,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="AddProfesionButton_Click"/>
             <Button x:Name="AddPersonalItemType" Content="Add Personal Item Type" HorizontalAlignment="Left" Height="50" Margin="0,250,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="13" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="AddPersonalItemTypeButton_Click"/>
             <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Height="50" Margin="0,325,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="BackButton_Click"/>
-            <TextBox x:Name="VersionBox" Height="20" Margin="25,400,25,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" FontSize="14" TextAlignment="Center" IsReadOnly="True"/>
+            <TextBox x:Name="VersionBox" Height="20" Margin="25,412,25,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Rockwell" FontSize="14" TextAlignment="Center" IsReadOnly="True"/>
+            <Button x:Name="BackButton_Copy" Content="Create DB and connect" HorizontalAlignment="Left" Height="20" Margin="0,387,0,0" VerticalAlignment="Top" Width="150" BorderBrush="Black" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" Click="CreateDBConnectButton_Click"/>
         </Grid>
     </Grid>
 </Window>
