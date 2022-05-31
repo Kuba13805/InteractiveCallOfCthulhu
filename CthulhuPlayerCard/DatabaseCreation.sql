@@ -1,4 +1,4 @@
-
+use Projekt_Cthulhu
 create table Zawody(
 	Id_wpisu int identity(1,1) Primary Key,
 	Id_zawodu nchar(4) Unique Not Null,

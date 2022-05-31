@@ -93,7 +93,6 @@ namespace CthulhuPlayerCard
             }
             catch (SqlException)
             {
-                MessageBox.Show("Connection with database cannot be opened! Please create connection and database by clicking the button.", "Wrong Database");
                 result = false;
             }
             return result;
