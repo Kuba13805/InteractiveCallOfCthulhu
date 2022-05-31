@@ -8,9 +8,9 @@
         Title="AddNewPersonalThingType" Height="500" Width="800" Loaded="Window_Loaded" Background="#FFD6DBDE" MinWidth="800" MinHeight="500" MaxWidth="800" MaxHeight="500">
     <Window.Resources>
         <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
-        <CollectionViewSource x:Key="typy_przedmiotówViewSource" Source="{Binding Typy_przedmiotów, Source={StaticResource projekt_CthulhuDataSet}}"/>
+        <CollectionViewSource x:Key="typy_przedmiotowViewSource" Source="{Binding Typy_przedmiotow, Source={StaticResource projekt_CthulhuDataSet}}"/>
     </Window.Resources>
-    <Grid DataContext="{StaticResource typy_przedmiotówViewSource}">
+    <Grid DataContext="{StaticResource typy_przedmiotowViewSource}" >
         <Grid HorizontalAlignment="Left" Height="240" Margin="10,219,0,0" VerticalAlignment="Top" Width="772">
             <Grid HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="752">
                 <TextBox x:Name="EnterTypeName" Height="20" Margin="0,10,26,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Rockwell" HorizontalAlignment="Right" Width="230"/>
@@ -26,9 +26,9 @@
                 <Button x:Name="AddName_Copy1" Content="" Height="50" Margin="0,75,170,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" HorizontalAlignment="Right" Width="150"/>
             </Grid>
         </Grid>
-        <DataGrid x:Name="typy_przedmiotówDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="196,10,196,259" RowDetailsVisibilityMode="VisibleWhenSelected" MinColumnWidth="70" RowHeaderWidth="0" IsReadOnly="True" CanUserSortColumns="False" CanUserResizeColumns="False" CanUserReorderColumns="False">
+        <DataGrid x:Name="typy_przedmiotowDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="196,10,196,259" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="typy_przedmiotowDataGrid_SelectionChanged" IsReadOnly="True" MinColumnWidth="70" RowHeaderWidth="0" CanUserResizeColumns="False" CanUserReorderColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="id_typuColumn" Binding="{Binding Id_typu}" Header="Type id" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="id_typuColumn" Binding="{Binding Id_typu}" Header="Type id" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="nazwa_typuColumn" Binding="{Binding Nazwa_typu}" Header="Type name" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>

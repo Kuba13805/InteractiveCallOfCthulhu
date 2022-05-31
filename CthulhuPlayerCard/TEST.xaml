@@ -1,0 +1,23 @@
+﻿<Window x:Class="CthulhuPlayerCard.TEST"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CthulhuPlayerCard"
+        mc:Ignorable="d"
+        Title="TEST" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Projekt_CthulhuDataSet x:Key="projekt_CthulhuDataSet"/>
+        <CollectionViewSource x:Key="typy_przedmiotowViewSource" Source="{Binding Typy_przedmiotow, Source={StaticResource projekt_CthulhuDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource typy_przedmiotowViewSource}">
+        <DataGrid x:Name="typy_przedmiotowDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="228,57,164,162" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id_wpisuColumn" Binding="{Binding Id_wpisu}" Header="Id wpisu" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="id_typuColumn" Binding="{Binding Id_typu}" Header="Id typu" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nazwa_typuColumn" Binding="{Binding Nazwa_typu}" Header="Nazwa typu" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

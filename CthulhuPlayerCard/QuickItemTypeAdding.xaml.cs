@@ -121,7 +121,7 @@ namespace CthulhuPlayerCard
         }
         private void InsertIntoNamesTable(string name, int id)
         {
-            Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotówTableAdapter typyPrzedmiotowTableAdapter = new Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotówTableAdapter();
+            Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotowTableAdapter typyPrzedmiotowTableAdapter = new Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotowTableAdapter();
             typyPrzedmiotowTableAdapter.Insert(id.ToString(), name);
             MessageBox.Show("Type " + '"' + name + '"' + " with id: " + '"' + id + '"' + " has been added", "Type added");
             Close();

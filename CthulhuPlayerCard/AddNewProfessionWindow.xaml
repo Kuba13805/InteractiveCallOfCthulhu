@@ -39,7 +39,7 @@
                 <Button x:Name="AddName_Copy1" Content="" Height="50" Margin="0,75,170,0" VerticalAlignment="Top" BorderBrush="Black" FontSize="18" FontFamily="Rockwell" BorderThickness="1" RenderTransformOrigin="0.5,0.5" Background="#FF2C374F" Foreground="#FFD7DADF" HorizontalAlignment="Right" Width="150"/>
             </Grid>
         </Grid>
-        <DataGrid x:Name="listaZawodowDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource listaZawodowViewSource}}" Margin="221,19,171,271" RowDetailsVisibilityMode="VisibleWhenSelected" RowHeaderWidth="0" IsReadOnly="True" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" MinColumnWidth="70">
+        <DataGrid x:Name="listaZawodowDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource listaZawodowViewSource}}" Margin="221,19,171,271" RowDetailsVisibilityMode="VisibleWhenSelected" RowHeaderWidth="0" IsReadOnly="True" CanUserResizeColumns="False" CanUserReorderColumns="False" MinColumnWidth="70">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="id_zawoduColumn" Binding="{Binding Id_zawodu}" Header="Profession id" Width="SizeToHeader"/>
                 <DataGridTextColumn x:Name="nazwa_zawoduColumn" Binding="{Binding Nazwa_zawodu}" Header="Profession name" Width="SizeToHeader"/>

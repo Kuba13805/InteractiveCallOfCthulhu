@@ -28,13 +28,12 @@ namespace CthulhuPlayerCard
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
             CthulhuPlayerCard.Projekt_CthulhuDataSet projekt_CthulhuDataSet = ((CthulhuPlayerCard.Projekt_CthulhuDataSet)(this.FindResource("projekt_CthulhuDataSet")));
-            // Load data into the table Typy_przedmiotów. You can modify this code as needed.
+            // Load data into the table Typy_przedmiotow. You can modify this code as needed.
             CthulhuPlayerCard.Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotowTableAdapter projekt_CthulhuDataSetTypy_przedmiotowTableAdapter = new CthulhuPlayerCard.Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotowTableAdapter();
             projekt_CthulhuDataSetTypy_przedmiotowTableAdapter.Fill(projekt_CthulhuDataSet.Typy_przedmiotow);
-            System.Windows.Data.CollectionViewSource typy_przedmiotówViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("typy_przedmiotówViewSource")));
-            typy_przedmiotówViewSource.View.MoveCurrentToFirst();
+            System.Windows.Data.CollectionViewSource typy_przedmiotowViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("typy_przedmiotowViewSource")));
+            typy_przedmiotowViewSource.View.MoveCurrentToFirst();
         }
         private bool CheckSpelling(string givenWord, string typeOfGivenWord)
         {
@@ -60,7 +59,7 @@ namespace CthulhuPlayerCard
             bool TypeInTable = true;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "Select Id_typu FROM Typy_przedmiotów WHERE Nazwa_typu = " + "'" + givenType + "'" + ";";
+            string sql = "Select Id_typu FROM Typy_przedmiotow WHERE Nazwa_typu = " + "'" + givenType + "'" + ";";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());
@@ -166,7 +165,7 @@ namespace CthulhuPlayerCard
                     int IdToDelete;
                     SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
                     sqlConnection.Open();
-                    string sql = "DELETE FROM Typy_przedmiotów WHERE Id_typu = " + EnterID.Text + ";";
+                    string sql = "DELETE FROM Typy_przedmiotow WHERE Id_typu = " + EnterID.Text + ";";
                     SqlCommand sqlCommand = sqlConnection.CreateCommand();
                     sqlCommand.CommandText = sql;
                     IdToDelete = Convert.ToInt32(sqlCommand.ExecuteScalar());
@@ -182,6 +181,11 @@ namespace CthulhuPlayerCard
             Options Window = new Options();
             Window.Show();
             Close();
+        }
+
+        private void typy_przedmiotowDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

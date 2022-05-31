@@ -122,6 +122,9 @@
     <Compile Include="Spis_postaci.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TEST.xaml.cs">
+      <DependentUpon>TEST.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Typy_przedmiotów.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -184,6 +187,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TEST.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model1.Context.cs">
@@ -242,8 +249,6 @@
     <None Include="Properties\DataSources\Projekt_CthulhuDataSet.Rzeczy_osobisteRow.datasource" />
     <None Include="Properties\DataSources\Projekt_CthulhuDataSet.Spis_postaciDataTable.datasource" />
     <None Include="Properties\DataSources\Projekt_CthulhuDataSet.Spis_postaciRow.datasource" />
-    <None Include="Properties\DataSources\Projekt_CthulhuDataSet.Typy_przedmiotówDataTable.datasource" />
-    <None Include="Properties\DataSources\Projekt_CthulhuDataSet.Typy_przedmiotówRow.datasource" />
     <None Include="Properties\DataSources\Projekt_CthulhuDataSet.ZawodyDataTable.datasource" />
     <None Include="Properties\DataSources\Projekt_CthulhuDataSet.ZawodyRow.datasource" />
     <None Include="Properties\Settings.settings">

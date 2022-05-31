@@ -106,3 +106,5 @@ D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\QuickSurnameAdding.baml
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\QuickItemTypeAdding.g.cs
 D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\QuickItemTypeAdding.baml
+D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\TEST.g.cs
+D:\InteractiveCallOfCthulhu\InteractiveCallOfCthulhu\CthulhuPlayerCard\obj\Debug\TEST.baml
