@@ -65,7 +65,7 @@ namespace CthulhuPlayerCard
             bool surnameInTable = true;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "Select Id_nazwiska FROM Nazwiska WHERE Pochodzenie_nazwiska = " + "'" + origin + "'" + ";";
+            string sql = "Select Id_nazwiska FROM Nazwiska WHERE Pochodzenie_nazwiska = " + "'" + origin + "'" + "AND Nazwisko = " + "'" + givenSurname + "'" + ";";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());
@@ -119,13 +119,14 @@ namespace CthulhuPlayerCard
                 string originToInput = UpdateWord(EnterSurnameOrigin.Text);
                 int idToInput = RandomId();
                 InsertIntoNamesTable(surnameToInput, originToInput, idToInput);
+                Close();
             }
         }
         private void InsertIntoNamesTable(string name, string origin, int id)
         {
             Projekt_CthulhuDataSetTableAdapters.NazwiskaTableAdapter nazwiskaTableAdapter = new Projekt_CthulhuDataSetTableAdapters.NazwiskaTableAdapter();
             nazwiskaTableAdapter.Insert(id.ToString(), name, origin);
-            MessageBox.Show("Name " + '"' + name + '"' + " with id: " + '"' + id + '"' + " has been added", "Name added");
+            MessageBox.Show("Surname " + '"' + name + '"' + " with id: " + '"' + id + '"' + " has been added", "Surname added");
             Close();
         }
     }

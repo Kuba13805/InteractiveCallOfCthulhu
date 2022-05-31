@@ -88,7 +88,7 @@
                             <RowDefinition Height="19*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="SLabel1" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" Grid.RowSpan="2" FontSize="25" Height="30" VerticalAlignment="Top" TextAlignment="Center"><Run Text="S"/><Run Text="TR"/></TextBlock>
-                        <TextBox x:Name="EnterS" Margin="75,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Top"/>
+                        <TextBox x:Name="EnterS" Margin="75,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Top" MaxLength="2"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="0,55,0,0">
                         <Grid.RowDefinitions>
@@ -96,7 +96,7 @@
                             <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="SLabel2" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="CON" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                        <TextBox x:Name="EnterCon" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40"/>
+                        <TextBox x:Name="EnterCon" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" MaxLength="2"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="0,110,0,0">
                         <Grid.RowDefinitions>
@@ -104,7 +104,7 @@
                             <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="SLabel3" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="DEX" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                        <TextBox x:Name="EnterDex" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40"/>
+                        <TextBox x:Name="EnterDex" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" MaxLength="2"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,0,0,0">
                         <Grid.RowDefinitions>
@@ -112,7 +112,7 @@
                             <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="SLabel4" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="SIZ" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                        <TextBox x:Name="EnterSiz" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40"/>
+                        <TextBox x:Name="EnterSiz" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" MaxLength="2"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,55,0,0">
                         <Grid.RowDefinitions>
@@ -120,7 +120,7 @@
                             <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="SLabel5" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="POW" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                        <TextBox x:Name="EnterPow" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40"/>
+                        <TextBox x:Name="EnterPow" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" MaxLength="2"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="150,110,0,0">
                         <Grid.RowDefinitions>
@@ -128,7 +128,7 @@
                             <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="SLabel6" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="APP" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                        <TextBox x:Name="EnterApp" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40"/>
+                        <TextBox x:Name="EnterApp" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" MaxLength="2"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,0,0,0">
                         <Grid.RowDefinitions>
@@ -136,7 +136,7 @@
                             <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="SLabel7" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="EDU" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                        <TextBox x:Name="EnterEdu" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40"/>
+                        <TextBox x:Name="EnterEdu" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" MaxLength="2"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="145" Margin="300,55,0,0">
                         <Grid.RowDefinitions>
@@ -144,7 +144,7 @@
                             <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="SLabel8" HorizontalAlignment="Left" Margin="5,10,0,10" TextWrapping="Wrap" Text="INT" Width="60" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="25" Height="30" TextAlignment="Center"/>
-                        <TextBox x:Name="EnterInt" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40"/>
+                        <TextBox x:Name="EnterInt" Margin="74,5,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" MaxLength="2"/>
                     </Grid>
                 </Grid>
             </Grid>
@@ -155,7 +155,7 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel10" HorizontalAlignment="Left" Margin="0,0,0,50" TextWrapping="Wrap" Text="Sanity" Width="120" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="20" Height="30" TextAlignment="Center" VerticalAlignment="Bottom"/>
-                    <TextBox x:Name="EnterSanity" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Bottom"/>
+                    <TextBox x:Name="EnterSanity" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Bottom" MaxLength="2"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="120" Margin="-1,110,0,0">
                     <Grid.RowDefinitions>
@@ -163,7 +163,7 @@
                         <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="SLabel12" HorizontalAlignment="Left" Margin="0,0,0,50" TextWrapping="Wrap" Text="Luck" Width="120" FontFamily="Rockwell" Foreground="#FF2C374F" FontSize="20" Height="30" TextAlignment="Center" VerticalAlignment="Bottom"/>
-                    <TextBox x:Name="EnterLuck" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Bottom"/>
+                    <TextBox x:Name="EnterLuck" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" Height="40" VerticalAlignment="Bottom" MaxLength="2"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -200,7 +200,7 @@
                         <RowDefinition Height="19*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="HistoryLabel" HorizontalAlignment="Left" Margin="5,10,0,0" TextWrapping="Wrap" Width="182" FontFamily="Rockwell" Foreground="#FF2C374F" Grid.RowSpan="2" FontSize="18" Height="30" VerticalAlignment="Top" TextAlignment="Center" Text="History"/>
-                    <TextBox x:Name="EnterHistory" Margin="200,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="EnterHistory" Margin="200,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13" MaxLength="3"/>
                 </Grid>
                 <Grid x:Name="SkillGrid_Copy" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="260" Margin="0,45,0,0">
                     <Grid.RowDefinitions>
@@ -208,7 +208,7 @@
                         <RowDefinition Height="19*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="BrawlLabel" HorizontalAlignment="Left" Margin="5,10,0,0" TextWrapping="Wrap" Width="182" FontFamily="Rockwell" Foreground="#FF2C374F" Grid.RowSpan="2" FontSize="18" Height="30" VerticalAlignment="Top" TextAlignment="Center" Text="Brawl"/>
-                    <TextBox x:Name="EnterBrawl" Margin="200,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="EnterBrawl" Margin="200,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13" MaxLength="3"/>
                 </Grid>
                 <Grid x:Name="SkillGrid_Copy1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="260" Margin="0,90,0,0">
                     <Grid.ColumnDefinitions>
@@ -220,7 +220,7 @@
                         <RowDefinition Height="19*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="PerceptivityLabel" HorizontalAlignment="Left" Margin="5,10,0,0" TextWrapping="Wrap" Width="182" FontFamily="Rockwell" Foreground="#FF2C374F" Grid.RowSpan="2" FontSize="18" Height="30" VerticalAlignment="Top" TextAlignment="Center" Grid.ColumnSpan="2"><Run Text="P"/><Run Text="erceptivity"/></TextBlock>
-                    <TextBox x:Name="EnterPerceptivity" Margin="140.667,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13" Grid.Column="1"/>
+                    <TextBox x:Name="EnterPerceptivity" Margin="140.667,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13" Grid.Column="1" MaxLength="3"/>
                 </Grid>
                 <Grid x:Name="SkillGrid_Copy2" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="260" Margin="0,135,0,0">
                     <Grid.RowDefinitions>
@@ -228,7 +228,7 @@
                         <RowDefinition Height="19*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="PerceptivityLabel1" HorizontalAlignment="Left" Margin="5,10,0,0" TextWrapping="Wrap" Width="182" FontFamily="Rockwell" Foreground="#FF2C374F" Grid.RowSpan="2" FontSize="18" Height="30" VerticalAlignment="Top" TextAlignment="Center" Text="First Aid"/>
-                    <TextBox x:Name="EnterFirstAid" Margin="200,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="EnterFirstAid" Margin="200,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13" MaxLength="3"/>
                 </Grid>
                 <Grid x:Name="SkillGrid_Copy3" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="260" Margin="0,180,0,0">
                     <Grid.RowDefinitions>
@@ -236,7 +236,7 @@
                         <RowDefinition Height="19*"/>
                     </Grid.RowDefinitions>
                     <TextBlock x:Name="FirearmLabel" HorizontalAlignment="Left" Margin="5,10,0,0" TextWrapping="Wrap" Width="182" FontFamily="Rockwell" Foreground="#FF2C374F" Grid.RowSpan="2" FontSize="18" Height="30" VerticalAlignment="Top" TextAlignment="Center"><Run Text="F"/><Run Text="irearm"/></TextBlock>
-                    <TextBox x:Name="EnterFirearm" Margin="200,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="EnterFirearm" Margin="200,5,0,0" TextWrapping="Wrap" FontFamily="Rockwell" Background="White" Foreground="#FF2C374F" BorderBrush="#FFABADB3" BorderThickness="2" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="30" Height="30" VerticalAlignment="Top" FontSize="13" MaxLength="3"/>
                 </Grid>
             </Grid>
         </Grid>
