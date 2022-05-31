@@ -48,7 +48,7 @@
                 <Grid HorizontalAlignment="Left" Height="1" Margin="0,15,0,0" VerticalAlignment="Top" Width="64" Background="#FF2C374F"/>
             </Grid>
         </Grid>
-        <Grid x:Name="Attributes" HorizontalAlignment="Left" Height="200" Margin="500,20,0,0" VerticalAlignment="Top" Width="445" d:IsLocked="True">
+        <Grid x:Name="Attributes" HorizontalAlignment="Left" Height="200" Margin="500,20,0,0" VerticalAlignment="Top" Width="445">
             <Label Content="Attributes" Height="25" Margin="185,0" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="14" Foreground="#FF2C374F"/>
             <Grid HorizontalAlignment="Left" Height="25" Margin="1,0,0,0" VerticalAlignment="Top" Width="184">
                 <Grid HorizontalAlignment="Left" Height="2" Margin="0,12,0,0" VerticalAlignment="Top" Width="184" Background="#FF2C374F"/>
@@ -151,7 +151,7 @@
                 </Grid>
             </Grid>
         </Grid>
-        <Grid x:Name="AttributesAdditional" HorizontalAlignment="Left" Height="200" Margin="980,20,0,0" VerticalAlignment="Top" Width="244" d:IsLocked="True">
+        <Grid x:Name="AttributesAdditional" HorizontalAlignment="Left" Height="200" Margin="980,20,0,0" VerticalAlignment="Top" Width="244">
             <Grid HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="120" Margin="-1,25,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -187,7 +187,7 @@
                 <TextBox x:Name="MagicPointsBox" Margin="38,0,0,5" TextWrapping="Wrap" FontFamily="Rockwell" Background="{x:Null}" Foreground="#FF2C374F" BorderBrush="#FF2C374F" BorderThickness="2" Text="3" FontSize="25" TextAlignment="Center" HorizontalAlignment="Left" Width="40" IsReadOnly="True" Height="40" VerticalAlignment="Bottom"/>
             </Grid>
         </Grid>
-        <Grid x:Name="Skills" HorizontalAlignment="Left" Height="360.1" Margin="10,225,0,0" VerticalAlignment="Top" Width="1420" d:IsLocked="True">
+        <Grid x:Name="Skills" HorizontalAlignment="Left" Height="360.1" Margin="10,225,0,0" VerticalAlignment="Top" Width="1420">
             <Label Content="Skills" Height="25" Margin="687.5,0" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="14" Foreground="#FF2C374F"/>
             <Grid HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="688">
                 <Grid Height="2" Margin="0,12,0,0" VerticalAlignment="Top" Background="#FF2C374F"/>
