@@ -49,7 +49,7 @@ namespace CthulhuPlayerCard
             bool TypeInTable = true;
             SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
             sqlConnection.Open();
-            string sql = "Select Id_typu FROM Typy_przedmiotów WHERE Nazwa_typu = " + "'" + givenType + "'" + ";";
+            string sql = "Select Id_typu FROM Typy_przedmiotow WHERE Nazwa_typu = " + "'" + givenType + "'" + ";";
             SqlCommand sqlCommand = sqlConnection.CreateCommand();
             sqlCommand.CommandText = sql;
             int searchResult = Convert.ToInt32(sqlCommand.ExecuteScalar());

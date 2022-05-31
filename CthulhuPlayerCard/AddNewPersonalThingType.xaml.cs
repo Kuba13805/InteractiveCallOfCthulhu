@@ -31,8 +31,8 @@ namespace CthulhuPlayerCard
 
             CthulhuPlayerCard.Projekt_CthulhuDataSet projekt_CthulhuDataSet = ((CthulhuPlayerCard.Projekt_CthulhuDataSet)(this.FindResource("projekt_CthulhuDataSet")));
             // Load data into the table Typy_przedmiotów. You can modify this code as needed.
-            CthulhuPlayerCard.Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotówTableAdapter projekt_CthulhuDataSetTypy_przedmiotówTableAdapter = new CthulhuPlayerCard.Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotówTableAdapter();
-            projekt_CthulhuDataSetTypy_przedmiotówTableAdapter.Fill(projekt_CthulhuDataSet.Typy_przedmiotów);
+            CthulhuPlayerCard.Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotowTableAdapter projekt_CthulhuDataSetTypy_przedmiotowTableAdapter = new CthulhuPlayerCard.Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotowTableAdapter();
+            projekt_CthulhuDataSetTypy_przedmiotowTableAdapter.Fill(projekt_CthulhuDataSet.Typy_przedmiotow);
             System.Windows.Data.CollectionViewSource typy_przedmiotówViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("typy_przedmiotówViewSource")));
             typy_przedmiotówViewSource.View.MoveCurrentToFirst();
         }
@@ -132,7 +132,7 @@ namespace CthulhuPlayerCard
         }
         private void InsertIntoNamesTable(string name, int id)
         {
-            Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotówTableAdapter typyPrzedmiotowTableAdapter = new Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotówTableAdapter();
+            Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotowTableAdapter typyPrzedmiotowTableAdapter = new Projekt_CthulhuDataSetTableAdapters.Typy_przedmiotowTableAdapter();
             typyPrzedmiotowTableAdapter.Insert(id.ToString(), name);
             MessageBox.Show("Type " + '"' + name + '"' + " with id: " + '"' + id + '"' + " has been added", "Type added");
             AddNewPersonalThingType Window = new AddNewPersonalThingType();

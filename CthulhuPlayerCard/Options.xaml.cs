@@ -135,11 +135,6 @@ namespace CthulhuPlayerCard
                 createDatabaseCommand.ExecuteNonQuery();
                 MessageBox.Show("Data inserted into tables", "Data inserted");
             }
-            catch (System.Exception ex)
-            {
-                successfullConnection = false;
-                MessageBox.Show(ex.ToString(), "Data inserted");
-            }
             finally
             {
                 if (successfullConnection == true)

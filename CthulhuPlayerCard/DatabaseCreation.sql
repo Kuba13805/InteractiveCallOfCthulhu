@@ -1,5 +1,4 @@
-Use Projekt_Cthulhu;
-	--Tworzenie tabeli Zawody
+
 create table Zawody(
 	Id_wpisu int identity(1,1) Primary Key,
 	Id_zawodu nchar(4) Unique Not Null,
@@ -10,7 +9,7 @@ create table Zawody(
 	Zwiazana_Pierwsza_Pomoc nchar(1),
 	Zwiazana_Bron_Palna nchar(1)
 	);
-	--Tworzenie tabeli Imiona
+
 create table Imiona(
 	Id_wpisu int identity(1,1) Primary Key,
 	Id_imienia nchar(4) Unique Not Null,
@@ -18,31 +17,31 @@ create table Imiona(
 	Pochodzenie_imienia nchar(30),
 	Plec_imienia nchar(30)
 	);
-	--Tworzenie tabeli Nazwiska
+
 create table Nazwiska(
 	Id_wpisu int identity(1,1) Primary Key,
 	Id_nazwiska nchar(4) Unique Not Null,
 	Nazwisko nchar(30) Not Null,
 	Pochodzenie_nazwiska nchar(30)
 	);
-	--Tworzenie tabeli Typy_przedmiotów
-	create table Typy_przedmiotów(
+
+	create table Typy_przedmiotow(
 	Id_wpisu int identity(1,1) Primary Key,
 	Id_typu nchar(4) Unique Not Null,
 	Nazwa_typu nchar(30) Not Null,
 	);
-	-- Tworzenie tabeli Rzeczy_osobiste
+
 create table Rzeczy_osobiste(
 	Id_wpisu int identity(1,1) Primary Key,
 	Id_przedmiotu nchar(4) Unique Not Null,
 	Id_typu nchar(4) Not Null,
 	Nazwa_przedmiotu nchar(30) Not Null
-	Constraint relacja5 foreign key(Id_typu) references Typy_przedmiotów(Id_typu)
+	Constraint relacja5 foreign key(Id_typu) references Typy_przedmiotow(Id_typu)
 	On Delete cascade
 	On Update cascade,
 
 	);
-	--Tworzenie tabeli Spis_postaci
+
 create table Spis_postaci(
 	Id_wpisu int identity(1,1) Primary Key,
 	Id_postaci nchar(4) Unique Not Null,
