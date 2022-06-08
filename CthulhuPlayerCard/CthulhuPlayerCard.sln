@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ViewListaZawodow.sql = ViewListaZawodow.sql
 	EndProjectSection
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CthulhuSetup", "..\CthulhuSetup\CthulhuSetup.vdproj", "{3BA3ED55-17A8-48C9-8A90-DD6C89821510}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,8 @@ Global
 		{1CFFD28D-7E7C-404F-998F-D2799D7FD694}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CFFD28D-7E7C-404F-998F-D2799D7FD694}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CFFD28D-7E7C-404F-998F-D2799D7FD694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BA3ED55-17A8-48C9-8A90-DD6C89821510}.Debug|Any CPU.ActiveCfg = Debug
+		{3BA3ED55-17A8-48C9-8A90-DD6C89821510}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
