@@ -190,7 +190,36 @@ namespace CthulhuPlayerCard
             surnameIdToSearch = sqlCommand.ExecuteScalar().ToString();
             return surnameIdToSearch;
         }
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private bool CheckForProfessionInTable(string professionTextBox)
+        {
+            bool professionChecked = true;
+            if (professionTextBox != null & professionTextBox != " " & professionTextBox != string.Empty)
+            {
+                int professionToSearch;
+                SqlConnection sqlConnection = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=Projekt_Cthulhu;Trusted_Connection=Yes;");
+                sqlConnection.Open();
+                string sql = "Select Id_zawodu FROM ListaZawodow WHERE Nazwa_zawodu = '" + professionTextBox + "';";
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                sqlCommand.CommandText = sql;
+                professionToSearch = Convert.ToInt32(sqlCommand.ExecuteScalar());
+                if (professionToSearch == 0)
+                {
+                    MessageBox.Show("Given profession was not found in profession list.", "Profession not found");
+                    professionChecked = false;
+                }
+                else
+                {
+                    professionChecked = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Type cannot be empty!", "Wrong type!");
+                professionChecked = false;
+            }
+            return professionChecked;
+        }
+            private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow Window = new MainWindow();
             Window.Show();
@@ -299,7 +328,8 @@ namespace CthulhuPlayerCard
             bool firstAidCheck = CheckSkill(EnterFirstAid.Text, "FirstAid");
             bool firearmCheck = CheckSkill(EnterFirearm.Text, "Firearm");
             bool typeChecked = CheckForItemTypeInTable(EnterType.Text);
-            if ((checkSex == true) && (countryOfBirthSpelling == true) && (placeOfResidenceSpelling == true) && (nameChecked == true) && (surnameChecked == true) && (sChecked == true) && (conChecked == true) && (dexChecked == true) && (sizChecked == true) && (powChecked == true) && (appChecked == true) && (eduChecked == true) && (intChecked == true) && (sanityChecked == true) && (luckChecked == true) && (typeChecked == true) && (historyCheck == true) && (brawlCheck == true) && (PerceptivityCheck == true) && (firstAidCheck == true) && (firearmCheck == true))
+            bool professionChecked = CheckForProfessionInTable(EnterProfession.Text);
+            if ((checkSex == true) && (countryOfBirthSpelling == true) && (placeOfResidenceSpelling == true) && (nameChecked == true) && (surnameChecked == true) && (sChecked == true) && (conChecked == true) && (dexChecked == true) && (sizChecked == true) && (powChecked == true) && (appChecked == true) && (eduChecked == true) && (intChecked == true) && (sanityChecked == true) && (luckChecked == true) && (typeChecked == true) && (historyCheck == true) && (brawlCheck == true) && (PerceptivityCheck == true) && (firstAidCheck == true) && (firearmCheck == true) && (professionChecked == true))
             {
                 int professionIdToInput = professionIdReturn(EnterProfession.Text);
                 int idToInput = RandomId();
